@@ -1,0 +1,491 @@
+Classic Timing Analyzer report for Voltimetro
+Thu May 23 01:19:16 2013
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'reloj'
+  7. tsu
+  8. tco
+  9. tpd
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                                                                                                            ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                                                                                    ; To                                                                                                      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 19.700 ns                        ; D[1]                                                                                                    ; voltaje[1]                                                                                              ; --         ; reloj    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 257.400 ns                       ; voltaje[1]                                                                                              ; decimalesDisplay[6]                                                                                     ; reloj      ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 28.700 ns                        ; INT                                                                                                     ; INT_OUT                                                                                                 ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -7.300 ns                        ; D[7]                                                                                                    ; voltaje[7]                                                                                              ; --         ; reloj    ; 0            ;
+; Clock Setup: 'reloj'         ; N/A   ; None          ; 54.35 MHz ( period = 18.400 ns ) ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; reloj      ; reloj    ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                                                                                         ;                                                                                                         ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPF10K70RC240-4    ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; reloj           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'reloj'                                                                                                                                                                                                                                                                                                                                                                   ;
++-------+------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                                                                                                    ; To                                                                                                      ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 54.35 MHz ( period = 18.400 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A   ; 55.25 MHz ( period = 18.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; reloj      ; reloj    ; None                        ; None                      ; 14.100 ns               ;
+; N/A   ; 55.25 MHz ( period = 18.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; reloj      ; reloj    ; None                        ; None                      ; 14.100 ns               ;
+; N/A   ; 55.25 MHz ( period = 18.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; reloj      ; reloj    ; None                        ; None                      ; 14.100 ns               ;
+; N/A   ; 55.25 MHz ( period = 18.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; reloj      ; reloj    ; None                        ; None                      ; 14.100 ns               ;
+; N/A   ; 55.25 MHz ( period = 18.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; reloj      ; reloj    ; None                        ; None                      ; 14.100 ns               ;
+; N/A   ; 55.25 MHz ( period = 18.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; reloj      ; reloj    ; None                        ; None                      ; 14.100 ns               ;
+; N/A   ; 58.48 MHz ( period = 17.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A   ; 58.48 MHz ( period = 17.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A   ; 58.48 MHz ( period = 17.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A   ; 58.48 MHz ( period = 17.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A   ; 58.48 MHz ( period = 17.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A   ; 58.48 MHz ( period = 17.100 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A   ; 59.52 MHz ( period = 16.800 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; reloj      ; reloj    ; None                        ; None                      ; 12.800 ns               ;
+; N/A   ; 59.52 MHz ( period = 16.800 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; reloj      ; reloj    ; None                        ; None                      ; 12.800 ns               ;
+; N/A   ; 59.52 MHz ( period = 16.800 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; reloj      ; reloj    ; None                        ; None                      ; 12.800 ns               ;
+; N/A   ; 59.52 MHz ( period = 16.800 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; reloj      ; reloj    ; None                        ; None                      ; 12.800 ns               ;
+; N/A   ; 59.52 MHz ( period = 16.800 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; reloj      ; reloj    ; None                        ; None                      ; 12.800 ns               ;
+; N/A   ; 59.52 MHz ( period = 16.800 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; reloj      ; reloj    ; None                        ; None                      ; 12.800 ns               ;
+; N/A   ; 75.19 MHz ( period = 13.300 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; senialMuestreo.estado3                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 9.300 ns                ;
+; N/A   ; 75.19 MHz ( period = 13.300 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; senialMuestreo.estado3                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 9.300 ns                ;
+; N/A   ; 75.19 MHz ( period = 13.300 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; senialMuestreo.estado3                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 9.300 ns                ;
+; N/A   ; 75.19 MHz ( period = 13.300 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; senialMuestreo.estado1                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 9.300 ns                ;
+; N/A   ; 75.19 MHz ( period = 13.300 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; senialMuestreo.estado1                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 9.300 ns                ;
+; N/A   ; 75.19 MHz ( period = 13.300 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; senialMuestreo.estado1                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 9.300 ns                ;
+; N/A   ; 76.92 MHz ( period = 13.000 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; senialMuestreo.estado3                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 9.000 ns                ;
+; N/A   ; 76.92 MHz ( period = 13.000 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; senialMuestreo.estado1                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 9.000 ns                ;
+; N/A   ; 78.74 MHz ( period = 12.700 ns )               ; senialMuestreo.estado2                                                                                  ; voltaje[2]                                                                                              ; reloj      ; reloj    ; None                        ; None                      ; 8.700 ns                ;
+; N/A   ; 83.33 MHz ( period = 12.000 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; senialMuestreo.estado3                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 8.000 ns                ;
+; N/A   ; 83.33 MHz ( period = 12.000 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; senialMuestreo.estado1                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 8.000 ns                ;
+; N/A   ; 84.03 MHz ( period = 11.900 ns )               ; senialMuestreo.estado3                                                                                  ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4] ; reloj      ; reloj    ; None                        ; None                      ; 7.900 ns                ;
+; N/A   ; 84.03 MHz ( period = 11.900 ns )               ; senialMuestreo.estado3                                                                                  ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; reloj      ; reloj    ; None                        ; None                      ; 7.900 ns                ;
+; N/A   ; 84.03 MHz ( period = 11.900 ns )               ; senialMuestreo.estado3                                                                                  ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[0] ; reloj      ; reloj    ; None                        ; None                      ; 7.900 ns                ;
+; N/A   ; 84.03 MHz ( period = 11.900 ns )               ; senialMuestreo.estado3                                                                                  ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1] ; reloj      ; reloj    ; None                        ; None                      ; 7.900 ns                ;
+; N/A   ; 84.03 MHz ( period = 11.900 ns )               ; senialMuestreo.estado3                                                                                  ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[2] ; reloj      ; reloj    ; None                        ; None                      ; 7.900 ns                ;
+; N/A   ; 84.03 MHz ( period = 11.900 ns )               ; senialMuestreo.estado3                                                                                  ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5] ; reloj      ; reloj    ; None                        ; None                      ; 7.900 ns                ;
+; N/A   ; 85.47 MHz ( period = 11.700 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; senialMuestreo.estado3                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 7.700 ns                ;
+; N/A   ; 85.47 MHz ( period = 11.700 ns )               ; lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[3] ; senialMuestreo.estado1                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 7.700 ns                ;
+; N/A   ; 85.47 MHz ( period = 11.700 ns )               ; senialMuestreo.estado2                                                                                  ; voltaje[3]                                                                                              ; reloj      ; reloj    ; None                        ; None                      ; 7.700 ns                ;
+; N/A   ; 85.47 MHz ( period = 11.700 ns )               ; senialMuestreo.estado2                                                                                  ; voltaje[0]                                                                                              ; reloj      ; reloj    ; None                        ; None                      ; 7.700 ns                ;
+; N/A   ; 89.29 MHz ( period = 11.200 ns )               ; senialMuestreo.estado2                                                                                  ; CS~reg0                                                                                                 ; reloj      ; reloj    ; None                        ; None                      ; 7.200 ns                ;
+; N/A   ; 90.09 MHz ( period = 11.100 ns )               ; senialMuestreo.estado2                                                                                  ; voltaje[7]                                                                                              ; reloj      ; reloj    ; None                        ; None                      ; 7.100 ns                ;
+; N/A   ; 90.09 MHz ( period = 11.100 ns )               ; senialMuestreo.estado2                                                                                  ; voltaje[4]                                                                                              ; reloj      ; reloj    ; None                        ; None                      ; 7.100 ns                ;
+; N/A   ; 90.09 MHz ( period = 11.100 ns )               ; senialMuestreo.estado2                                                                                  ; voltaje[6]                                                                                              ; reloj      ; reloj    ; None                        ; None                      ; 7.100 ns                ;
+; N/A   ; 90.91 MHz ( period = 11.000 ns )               ; senialMuestreo.estado2                                                                                  ; voltaje[1]                                                                                              ; reloj      ; reloj    ; None                        ; None                      ; 7.000 ns                ;
+; N/A   ; 91.74 MHz ( period = 10.900 ns )               ; senialMuestreo.estado3                                                                                  ; CS~reg0                                                                                                 ; reloj      ; reloj    ; None                        ; None                      ; 6.900 ns                ;
+; N/A   ; 112.36 MHz ( period = 8.900 ns )               ; senialMuestreo.estado2                                                                                  ; RD~reg0                                                                                                 ; reloj      ; reloj    ; None                        ; None                      ; 4.900 ns                ;
+; N/A   ; 116.28 MHz ( period = 8.600 ns )               ; senialMuestreo.estado3                                                                                  ; RD~reg0                                                                                                 ; reloj      ; reloj    ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; senialMuestreo.estado3                                                                                  ; senialMuestreo.estado3                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; senialMuestreo.estado1                                                                                  ; senialMuestreo.estado2                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; senialMuestreo.estado1                                                                                  ; senialMuestreo.estado1                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 2.500 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; senialMuestreo.estado2                                                                                  ; senialMuestreo.estado3                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 2.200 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; senialMuestreo.estado3                                                                                  ; senialMuestreo.estado1                                                                                  ; reloj      ; reloj    ; None                        ; None                      ; 2.200 ns                ;
+; N/A   ; Restricted to 125.00 MHz ( period = 8.000 ns ) ; senialMuestreo.estado2                                                                                  ; voltaje[5]                                                                                              ; reloj      ; reloj    ; None                        ; None                      ; 1.700 ns                ;
++-------+------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------+
+; tsu                                                                          ;
++-------+--------------+------------+------+------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                     ; To Clock ;
++-------+--------------+------------+------+------------------------+----------+
+; N/A   ; None         ; 19.700 ns  ; D[1] ; voltaje[1]             ; reloj    ;
+; N/A   ; None         ; 19.400 ns  ; D[0] ; voltaje[0]             ; reloj    ;
+; N/A   ; None         ; 18.600 ns  ; D[3] ; voltaje[3]             ; reloj    ;
+; N/A   ; None         ; 17.500 ns  ; D[2] ; voltaje[2]             ; reloj    ;
+; N/A   ; None         ; 14.800 ns  ; INT  ; senialMuestreo.estado1 ; reloj    ;
+; N/A   ; None         ; 14.600 ns  ; D[5] ; voltaje[5]             ; reloj    ;
+; N/A   ; None         ; 14.500 ns  ; INT  ; senialMuestreo.estado2 ; reloj    ;
+; N/A   ; None         ; 13.100 ns  ; D[4] ; voltaje[4]             ; reloj    ;
+; N/A   ; None         ; 13.000 ns  ; D[6] ; voltaje[6]             ; reloj    ;
+; N/A   ; None         ; 13.000 ns  ; D[7] ; voltaje[7]             ; reloj    ;
++-------+--------------+------------+------+------------------------+----------+
+
+
++-----------------------------------------------------------------------------------+
+; tco                                                                               ;
++-------+--------------+------------+------------+---------------------+------------+
+; Slack ; Required tco ; Actual tco ; From       ; To                  ; From Clock ;
++-------+--------------+------------+------------+---------------------+------------+
+; N/A   ; None         ; 257.400 ns ; voltaje[2] ; decimalesDisplay[6] ; reloj      ;
+; N/A   ; None         ; 257.400 ns ; voltaje[1] ; decimalesDisplay[6] ; reloj      ;
+; N/A   ; None         ; 257.300 ns ; voltaje[2] ; decimalesDisplay[5] ; reloj      ;
+; N/A   ; None         ; 257.300 ns ; voltaje[1] ; decimalesDisplay[5] ; reloj      ;
+; N/A   ; None         ; 255.800 ns ; voltaje[2] ; decimalesDisplay[4] ; reloj      ;
+; N/A   ; None         ; 255.800 ns ; voltaje[1] ; decimalesDisplay[4] ; reloj      ;
+; N/A   ; None         ; 255.800 ns ; voltaje[2] ; decimalesDisplay[3] ; reloj      ;
+; N/A   ; None         ; 255.800 ns ; voltaje[1] ; decimalesDisplay[3] ; reloj      ;
+; N/A   ; None         ; 255.800 ns ; voltaje[2] ; decimalesDisplay[1] ; reloj      ;
+; N/A   ; None         ; 255.800 ns ; voltaje[1] ; decimalesDisplay[1] ; reloj      ;
+; N/A   ; None         ; 255.800 ns ; voltaje[2] ; decimalesDisplay[0] ; reloj      ;
+; N/A   ; None         ; 255.800 ns ; voltaje[1] ; decimalesDisplay[0] ; reloj      ;
+; N/A   ; None         ; 255.700 ns ; voltaje[2] ; decimalesDisplay[2] ; reloj      ;
+; N/A   ; None         ; 255.700 ns ; voltaje[1] ; decimalesDisplay[2] ; reloj      ;
+; N/A   ; None         ; 255.100 ns ; voltaje[5] ; decimalesDisplay[6] ; reloj      ;
+; N/A   ; None         ; 255.000 ns ; voltaje[5] ; decimalesDisplay[5] ; reloj      ;
+; N/A   ; None         ; 254.900 ns ; voltaje[3] ; decimalesDisplay[6] ; reloj      ;
+; N/A   ; None         ; 254.900 ns ; voltaje[0] ; decimalesDisplay[6] ; reloj      ;
+; N/A   ; None         ; 254.800 ns ; voltaje[3] ; decimalesDisplay[5] ; reloj      ;
+; N/A   ; None         ; 254.800 ns ; voltaje[0] ; decimalesDisplay[5] ; reloj      ;
+; N/A   ; None         ; 253.500 ns ; voltaje[5] ; decimalesDisplay[4] ; reloj      ;
+; N/A   ; None         ; 253.500 ns ; voltaje[5] ; decimalesDisplay[3] ; reloj      ;
+; N/A   ; None         ; 253.500 ns ; voltaje[5] ; decimalesDisplay[1] ; reloj      ;
+; N/A   ; None         ; 253.500 ns ; voltaje[5] ; decimalesDisplay[0] ; reloj      ;
+; N/A   ; None         ; 253.400 ns ; voltaje[5] ; decimalesDisplay[2] ; reloj      ;
+; N/A   ; None         ; 253.300 ns ; voltaje[3] ; decimalesDisplay[4] ; reloj      ;
+; N/A   ; None         ; 253.300 ns ; voltaje[0] ; decimalesDisplay[4] ; reloj      ;
+; N/A   ; None         ; 253.300 ns ; voltaje[3] ; decimalesDisplay[3] ; reloj      ;
+; N/A   ; None         ; 253.300 ns ; voltaje[0] ; decimalesDisplay[3] ; reloj      ;
+; N/A   ; None         ; 253.300 ns ; voltaje[3] ; decimalesDisplay[1] ; reloj      ;
+; N/A   ; None         ; 253.300 ns ; voltaje[0] ; decimalesDisplay[1] ; reloj      ;
+; N/A   ; None         ; 253.300 ns ; voltaje[3] ; decimalesDisplay[0] ; reloj      ;
+; N/A   ; None         ; 253.300 ns ; voltaje[0] ; decimalesDisplay[0] ; reloj      ;
+; N/A   ; None         ; 253.200 ns ; voltaje[3] ; decimalesDisplay[2] ; reloj      ;
+; N/A   ; None         ; 253.200 ns ; voltaje[0] ; decimalesDisplay[2] ; reloj      ;
+; N/A   ; None         ; 249.200 ns ; voltaje[4] ; decimalesDisplay[6] ; reloj      ;
+; N/A   ; None         ; 249.100 ns ; voltaje[4] ; decimalesDisplay[5] ; reloj      ;
+; N/A   ; None         ; 247.600 ns ; voltaje[4] ; decimalesDisplay[4] ; reloj      ;
+; N/A   ; None         ; 247.600 ns ; voltaje[4] ; decimalesDisplay[3] ; reloj      ;
+; N/A   ; None         ; 247.600 ns ; voltaje[4] ; decimalesDisplay[1] ; reloj      ;
+; N/A   ; None         ; 247.600 ns ; voltaje[4] ; decimalesDisplay[0] ; reloj      ;
+; N/A   ; None         ; 247.500 ns ; voltaje[4] ; decimalesDisplay[2] ; reloj      ;
+; N/A   ; None         ; 245.700 ns ; voltaje[6] ; decimalesDisplay[6] ; reloj      ;
+; N/A   ; None         ; 245.600 ns ; voltaje[6] ; decimalesDisplay[5] ; reloj      ;
+; N/A   ; None         ; 244.100 ns ; voltaje[6] ; decimalesDisplay[4] ; reloj      ;
+; N/A   ; None         ; 244.100 ns ; voltaje[6] ; decimalesDisplay[3] ; reloj      ;
+; N/A   ; None         ; 244.100 ns ; voltaje[6] ; decimalesDisplay[1] ; reloj      ;
+; N/A   ; None         ; 244.100 ns ; voltaje[6] ; decimalesDisplay[0] ; reloj      ;
+; N/A   ; None         ; 244.000 ns ; voltaje[6] ; decimalesDisplay[2] ; reloj      ;
+; N/A   ; None         ; 243.700 ns ; voltaje[7] ; decimalesDisplay[6] ; reloj      ;
+; N/A   ; None         ; 243.600 ns ; voltaje[7] ; decimalesDisplay[5] ; reloj      ;
+; N/A   ; None         ; 242.100 ns ; voltaje[7] ; decimalesDisplay[4] ; reloj      ;
+; N/A   ; None         ; 242.100 ns ; voltaje[7] ; decimalesDisplay[3] ; reloj      ;
+; N/A   ; None         ; 242.100 ns ; voltaje[7] ; decimalesDisplay[1] ; reloj      ;
+; N/A   ; None         ; 242.100 ns ; voltaje[7] ; decimalesDisplay[0] ; reloj      ;
+; N/A   ; None         ; 242.000 ns ; voltaje[7] ; decimalesDisplay[2] ; reloj      ;
+; N/A   ; None         ; 223.000 ns ; voltaje[2] ; unidadesDisplay[1]  ; reloj      ;
+; N/A   ; None         ; 223.000 ns ; voltaje[1] ; unidadesDisplay[1]  ; reloj      ;
+; N/A   ; None         ; 223.000 ns ; voltaje[2] ; unidadesDisplay[0]  ; reloj      ;
+; N/A   ; None         ; 223.000 ns ; voltaje[1] ; unidadesDisplay[0]  ; reloj      ;
+; N/A   ; None         ; 221.900 ns ; voltaje[2] ; unidadesDisplay[4]  ; reloj      ;
+; N/A   ; None         ; 221.900 ns ; voltaje[1] ; unidadesDisplay[4]  ; reloj      ;
+; N/A   ; None         ; 221.900 ns ; voltaje[2] ; unidadesDisplay[3]  ; reloj      ;
+; N/A   ; None         ; 221.900 ns ; voltaje[1] ; unidadesDisplay[3]  ; reloj      ;
+; N/A   ; None         ; 221.700 ns ; voltaje[2] ; unidadesDisplay[5]  ; reloj      ;
+; N/A   ; None         ; 221.700 ns ; voltaje[1] ; unidadesDisplay[5]  ; reloj      ;
+; N/A   ; None         ; 221.600 ns ; voltaje[2] ; unidadesDisplay[2]  ; reloj      ;
+; N/A   ; None         ; 221.600 ns ; voltaje[1] ; unidadesDisplay[2]  ; reloj      ;
+; N/A   ; None         ; 220.700 ns ; voltaje[5] ; unidadesDisplay[1]  ; reloj      ;
+; N/A   ; None         ; 220.700 ns ; voltaje[5] ; unidadesDisplay[0]  ; reloj      ;
+; N/A   ; None         ; 220.500 ns ; voltaje[3] ; unidadesDisplay[1]  ; reloj      ;
+; N/A   ; None         ; 220.500 ns ; voltaje[0] ; unidadesDisplay[1]  ; reloj      ;
+; N/A   ; None         ; 220.500 ns ; voltaje[3] ; unidadesDisplay[0]  ; reloj      ;
+; N/A   ; None         ; 220.500 ns ; voltaje[0] ; unidadesDisplay[0]  ; reloj      ;
+; N/A   ; None         ; 219.600 ns ; voltaje[5] ; unidadesDisplay[4]  ; reloj      ;
+; N/A   ; None         ; 219.600 ns ; voltaje[5] ; unidadesDisplay[3]  ; reloj      ;
+; N/A   ; None         ; 219.400 ns ; voltaje[5] ; unidadesDisplay[5]  ; reloj      ;
+; N/A   ; None         ; 219.400 ns ; voltaje[3] ; unidadesDisplay[4]  ; reloj      ;
+; N/A   ; None         ; 219.400 ns ; voltaje[0] ; unidadesDisplay[4]  ; reloj      ;
+; N/A   ; None         ; 219.400 ns ; voltaje[3] ; unidadesDisplay[3]  ; reloj      ;
+; N/A   ; None         ; 219.400 ns ; voltaje[0] ; unidadesDisplay[3]  ; reloj      ;
+; N/A   ; None         ; 219.300 ns ; voltaje[5] ; unidadesDisplay[2]  ; reloj      ;
+; N/A   ; None         ; 219.200 ns ; voltaje[3] ; unidadesDisplay[5]  ; reloj      ;
+; N/A   ; None         ; 219.200 ns ; voltaje[0] ; unidadesDisplay[5]  ; reloj      ;
+; N/A   ; None         ; 219.100 ns ; voltaje[3] ; unidadesDisplay[2]  ; reloj      ;
+; N/A   ; None         ; 219.100 ns ; voltaje[0] ; unidadesDisplay[2]  ; reloj      ;
+; N/A   ; None         ; 218.900 ns ; voltaje[2] ; unidadesDisplay[6]  ; reloj      ;
+; N/A   ; None         ; 218.900 ns ; voltaje[1] ; unidadesDisplay[6]  ; reloj      ;
+; N/A   ; None         ; 216.600 ns ; voltaje[5] ; unidadesDisplay[6]  ; reloj      ;
+; N/A   ; None         ; 216.400 ns ; voltaje[3] ; unidadesDisplay[6]  ; reloj      ;
+; N/A   ; None         ; 216.400 ns ; voltaje[0] ; unidadesDisplay[6]  ; reloj      ;
+; N/A   ; None         ; 214.800 ns ; voltaje[4] ; unidadesDisplay[1]  ; reloj      ;
+; N/A   ; None         ; 214.800 ns ; voltaje[4] ; unidadesDisplay[0]  ; reloj      ;
+; N/A   ; None         ; 213.700 ns ; voltaje[4] ; unidadesDisplay[4]  ; reloj      ;
+; N/A   ; None         ; 213.700 ns ; voltaje[4] ; unidadesDisplay[3]  ; reloj      ;
+; N/A   ; None         ; 213.500 ns ; voltaje[4] ; unidadesDisplay[5]  ; reloj      ;
+; N/A   ; None         ; 213.400 ns ; voltaje[4] ; unidadesDisplay[2]  ; reloj      ;
+; N/A   ; None         ; 211.300 ns ; voltaje[6] ; unidadesDisplay[1]  ; reloj      ;
+; N/A   ; None         ; 211.300 ns ; voltaje[6] ; unidadesDisplay[0]  ; reloj      ;
+; N/A   ; None         ; 210.700 ns ; voltaje[4] ; unidadesDisplay[6]  ; reloj      ;
+; N/A   ; None         ; 210.200 ns ; voltaje[6] ; unidadesDisplay[4]  ; reloj      ;
+; N/A   ; None         ; 210.200 ns ; voltaje[6] ; unidadesDisplay[3]  ; reloj      ;
+; N/A   ; None         ; 210.000 ns ; voltaje[6] ; unidadesDisplay[5]  ; reloj      ;
+; N/A   ; None         ; 209.900 ns ; voltaje[6] ; unidadesDisplay[2]  ; reloj      ;
+; N/A   ; None         ; 209.300 ns ; voltaje[7] ; unidadesDisplay[1]  ; reloj      ;
+; N/A   ; None         ; 209.300 ns ; voltaje[7] ; unidadesDisplay[0]  ; reloj      ;
+; N/A   ; None         ; 208.200 ns ; voltaje[7] ; unidadesDisplay[4]  ; reloj      ;
+; N/A   ; None         ; 208.200 ns ; voltaje[7] ; unidadesDisplay[3]  ; reloj      ;
+; N/A   ; None         ; 208.000 ns ; voltaje[7] ; unidadesDisplay[5]  ; reloj      ;
+; N/A   ; None         ; 207.900 ns ; voltaje[7] ; unidadesDisplay[2]  ; reloj      ;
+; N/A   ; None         ; 207.200 ns ; voltaje[6] ; unidadesDisplay[6]  ; reloj      ;
+; N/A   ; None         ; 205.200 ns ; voltaje[7] ; unidadesDisplay[6]  ; reloj      ;
+; N/A   ; None         ; 16.800 ns  ; CS~reg0    ; CS                  ; reloj      ;
+; N/A   ; None         ; 16.800 ns  ; RD~reg0    ; RD                  ; reloj      ;
++-------+--------------+------------+------------+---------------------+------------+
+
+
++--------------------------------------------------------------+
+; tpd                                                          ;
++-------+-------------------+-----------------+------+---------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To      ;
++-------+-------------------+-----------------+------+---------+
+; N/A   ; None              ; 28.700 ns       ; INT  ; INT_OUT ;
++-------+-------------------+-----------------+------+---------+
+
+
++-------------------------------------------------------------------------------------+
+; th                                                                                  ;
++---------------+-------------+------------+------+------------------------+----------+
+; Minimum Slack ; Required th ; Actual th  ; From ; To                     ; To Clock ;
++---------------+-------------+------------+------+------------------------+----------+
+; N/A           ; None        ; -7.300 ns  ; D[6] ; voltaje[6]             ; reloj    ;
+; N/A           ; None        ; -7.300 ns  ; D[7] ; voltaje[7]             ; reloj    ;
+; N/A           ; None        ; -7.400 ns  ; D[4] ; voltaje[4]             ; reloj    ;
+; N/A           ; None        ; -8.800 ns  ; INT  ; senialMuestreo.estado2 ; reloj    ;
+; N/A           ; None        ; -8.900 ns  ; D[5] ; voltaje[5]             ; reloj    ;
+; N/A           ; None        ; -9.100 ns  ; INT  ; senialMuestreo.estado1 ; reloj    ;
+; N/A           ; None        ; -11.800 ns ; D[2] ; voltaje[2]             ; reloj    ;
+; N/A           ; None        ; -12.900 ns ; D[3] ; voltaje[3]             ; reloj    ;
+; N/A           ; None        ; -13.700 ns ; D[0] ; voltaje[0]             ; reloj    ;
+; N/A           ; None        ; -14.000 ns ; D[1] ; voltaje[1]             ; reloj    ;
++---------------+-------------+------------+------+------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Thu May 23 01:19:11 2013
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Voltimetro -c Voltimetro
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "reloj" is an undefined clock
+Info: Clock "reloj" has Internal fmax of 54.35 MHz between source register "lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1]" and destination register "lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4]" (period= 18.4 ns)
+    Info: + Longest register to register delay is 14.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC2_A1; Fanout = 4; REG Node = 'lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1]'
+        Info: 2: + IC(0.500 ns) + CELL(2.000 ns) = 2.500 ns; Loc. = LC7_A1; Fanout = 1; COMB Node = 'LessThan0~8'
+        Info: 3: + IC(0.000 ns) + CELL(2.000 ns) = 4.500 ns; Loc. = LC8_A1; Fanout = 3; COMB Node = 'LessThan0~5'
+        Info: 4: + IC(2.800 ns) + CELL(2.400 ns) = 9.700 ns; Loc. = LC1_A2; Fanout = 6; COMB Node = 'lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[5]~1'
+        Info: 5: + IC(2.700 ns) + CELL(2.000 ns) = 14.400 ns; Loc. = LC5_A1; Fanout = 4; REG Node = 'lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4]'
+        Info: Total cell delay = 8.400 ns ( 58.33 % )
+        Info: Total interconnect delay = 6.000 ns ( 41.67 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "reloj" to destination register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 19; CLK Node = 'reloj'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC5_A1; Fanout = 4; REG Node = 'lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[4]'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+        Info: - Longest clock path from clock "reloj" to source register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 19; CLK Node = 'reloj'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC2_A1; Fanout = 4; REG Node = 'lpm_counter:\obtencionFrecuenciaMuestreo:pulsos[0]_rtl_0|alt_counter_f10ke:wysi_counter|counter_cell[1]'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Micro setup delay of destination is 2.600 ns
+Info: tsu for register "voltaje[1]" (data pin = "D[1]", clock pin = "reloj") is 19.700 ns
+    Info: + Longest pin to register delay is 24.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_128; Fanout = 1; PIN Node = 'D[1]'
+        Info: 2: + IC(11.800 ns) + CELL(2.000 ns) = 24.100 ns; Loc. = LC1_G5; Fanout = 7; REG Node = 'voltaje[1]'
+        Info: Total cell delay = 12.300 ns ( 51.04 % )
+        Info: Total interconnect delay = 11.800 ns ( 48.96 % )
+    Info: + Micro setup delay of destination is 2.600 ns
+    Info: - Shortest clock path from clock "reloj" to destination register is 7.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 19; CLK Node = 'reloj'
+        Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC1_G5; Fanout = 7; REG Node = 'voltaje[1]'
+        Info: Total cell delay = 2.900 ns ( 41.43 % )
+        Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+Info: tco from clock "reloj" to destination pin "decimalesDisplay[6]" through register "voltaje[2]" is 257.400 ns
+    Info: + Longest clock path from clock "reloj" to source register is 7.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 19; CLK Node = 'reloj'
+        Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC5_G27; Fanout = 8; REG Node = 'voltaje[2]'
+        Info: Total cell delay = 2.900 ns ( 41.43 % )
+        Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Longest register to pin delay is 249.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC5_G27; Fanout = 8; REG Node = 'voltaje[2]'
+        Info: 2: + IC(3.300 ns) + CELL(2.400 ns) = 5.700 ns; Loc. = LC5_G15; Fanout = 2; COMB Node = 'lpm_mult:Mult0|multcore:mult_core|romout[0][6]~332'
+        Info: 3: + IC(2.900 ns) + CELL(2.700 ns) = 11.300 ns; Loc. = LC6_G7; Fanout = 4; COMB Node = 'lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]'
+        Info: 4: + IC(3.100 ns) + CELL(2.400 ns) = 16.800 ns; Loc. = LC7_G11; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[0]~61'
+        Info: 5: + IC(0.500 ns) + CELL(2.700 ns) = 20.000 ns; Loc. = LC5_G11; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~57'
+        Info: 6: + IC(2.900 ns) + CELL(2.700 ns) = 25.600 ns; Loc. = LC6_G1; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[2]~27'
+        Info: 7: + IC(2.800 ns) + CELL(2.700 ns) = 31.100 ns; Loc. = LC2_G8; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]~33'
+        Info: 8: + IC(3.000 ns) + CELL(2.700 ns) = 36.800 ns; Loc. = LC7_G16; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]~39'
+        Info: 9: + IC(3.000 ns) + CELL(2.700 ns) = 42.500 ns; Loc. = LC6_G3; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]~45'
+        Info: 10: + IC(3.000 ns) + CELL(2.700 ns) = 48.200 ns; Loc. = LC4_G10; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]~51'
+        Info: 11: + IC(0.500 ns) + CELL(2.700 ns) = 51.400 ns; Loc. = LC6_G10; Fanout = 30; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~21'
+        Info: 12: + IC(3.500 ns) + CELL(2.700 ns) = 57.600 ns; Loc. = LC1_G11; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|StageOut[63]~322'
+        Info: 13: + IC(2.800 ns) + CELL(1.400 ns) = 61.800 ns; Loc. = LC6_G4; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[1]~COUT'
+        Info: 14: + IC(0.000 ns) + CELL(0.300 ns) = 62.100 ns; Loc. = LC7_G4; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[2]~COUT'
+        Info: 15: + IC(0.000 ns) + CELL(0.300 ns) = 62.400 ns; Loc. = LC8_G4; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[3]~COUT'
+        Info: 16: + IC(1.100 ns) + CELL(0.300 ns) = 63.800 ns; Loc. = LC1_G6; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[4]~COUT'
+        Info: 17: + IC(0.000 ns) + CELL(0.300 ns) = 64.100 ns; Loc. = LC2_G6; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[5]~COUT'
+        Info: 18: + IC(0.000 ns) + CELL(0.300 ns) = 64.400 ns; Loc. = LC3_G6; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[6]~COUT'
+        Info: 19: + IC(0.000 ns) + CELL(0.300 ns) = 64.700 ns; Loc. = LC4_G6; Fanout = 1; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[7]~COUT'
+        Info: 20: + IC(0.000 ns) + CELL(1.200 ns) = 65.900 ns; Loc. = LC5_G6; Fanout = 31; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]~25'
+        Info: 21: + IC(5.600 ns) + CELL(2.700 ns) = 74.200 ns; Loc. = LC5_G32; Fanout = 3; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|StageOut[73]~323'
+        Info: 22: + IC(2.800 ns) + CELL(1.400 ns) = 78.400 ns; Loc. = LC7_G34; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[2]~COUT'
+        Info: 23: + IC(0.000 ns) + CELL(0.300 ns) = 78.700 ns; Loc. = LC8_G34; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[3]~COUT'
+        Info: 24: + IC(1.100 ns) + CELL(0.300 ns) = 80.100 ns; Loc. = LC1_G36; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[4]~COUT'
+        Info: 25: + IC(0.000 ns) + CELL(0.300 ns) = 80.400 ns; Loc. = LC2_G36; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[5]~COUT'
+        Info: 26: + IC(0.000 ns) + CELL(0.300 ns) = 80.700 ns; Loc. = LC3_G36; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[6]~COUT'
+        Info: 27: + IC(0.000 ns) + CELL(0.300 ns) = 81.000 ns; Loc. = LC4_G36; Fanout = 1; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[7]~COUT'
+        Info: 28: + IC(0.000 ns) + CELL(1.200 ns) = 82.200 ns; Loc. = LC5_G36; Fanout = 35; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[8]~25'
+        Info: 29: + IC(6.000 ns) + CELL(2.400 ns) = 90.600 ns; Loc. = LC8_B52; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[1]~35'
+        Info: 30: + IC(0.500 ns) + CELL(2.400 ns) = 93.500 ns; Loc. = LC7_B52; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[2]~31'
+        Info: 31: + IC(0.500 ns) + CELL(2.400 ns) = 96.400 ns; Loc. = LC1_B52; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[3]~25'
+        Info: 32: + IC(5.000 ns) + CELL(2.400 ns) = 103.800 ns; Loc. = LC7_B8; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[4]~19'
+        Info: 33: + IC(0.500 ns) + CELL(2.400 ns) = 106.700 ns; Loc. = LC1_B8; Fanout = 15; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~15'
+        Info: 34: + IC(5.700 ns) + CELL(2.700 ns) = 115.100 ns; Loc. = LC8_B42; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|StageOut[46]~198'
+        Info: 35: + IC(0.500 ns) + CELL(2.700 ns) = 118.300 ns; Loc. = LC2_B42; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[2]~61'
+        Info: 36: + IC(2.900 ns) + CELL(2.700 ns) = 123.900 ns; Loc. = LC1_B49; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[3]~53'
+        Info: 37: + IC(2.700 ns) + CELL(2.700 ns) = 129.300 ns; Loc. = LC4_B46; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[4]~45'
+        Info: 38: + IC(4.700 ns) + CELL(2.700 ns) = 136.700 ns; Loc. = LC2_B8; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[5]~37'
+        Info: 39: + IC(2.900 ns) + CELL(2.700 ns) = 142.300 ns; Loc. = LC1_B13; Fanout = 18; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[6]~21'
+        Info: 40: + IC(6.100 ns) + CELL(2.700 ns) = 151.100 ns; Loc. = LC4_B42; Fanout = 3; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|StageOut[55]~169'
+        Info: 41: + IC(2.800 ns) + CELL(2.400 ns) = 156.300 ns; Loc. = LC1_B38; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[2]~39'
+        Info: 42: + IC(2.900 ns) + CELL(2.700 ns) = 161.900 ns; Loc. = LC2_B45; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]~71'
+        Info: 43: + IC(2.700 ns) + CELL(2.700 ns) = 167.300 ns; Loc. = LC2_B49; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]~63'
+        Info: 44: + IC(2.700 ns) + CELL(2.700 ns) = 172.700 ns; Loc. = LC2_B46; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]~55'
+        Info: 45: + IC(4.000 ns) + CELL(2.700 ns) = 179.400 ns; Loc. = LC2_B20; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]~47'
+        Info: 46: + IC(2.800 ns) + CELL(2.700 ns) = 184.900 ns; Loc. = LC2_B13; Fanout = 14; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~23'
+        Info: 47: + IC(5.000 ns) + CELL(2.700 ns) = 192.600 ns; Loc. = LC5_B36; Fanout = 3; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|StageOut[64]~166'
+        Info: 48: + IC(0.500 ns) + CELL(2.400 ns) = 195.500 ns; Loc. = LC1_B36; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[2]~41'
+        Info: 49: + IC(2.800 ns) + CELL(2.700 ns) = 201.000 ns; Loc. = LC2_B38; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[3]~49'
+        Info: 50: + IC(2.900 ns) + CELL(2.700 ns) = 206.600 ns; Loc. = LC4_B45; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[4]~81'
+        Info: 51: + IC(0.500 ns) + CELL(2.700 ns) = 209.800 ns; Loc. = LC1_B45; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[5]~73'
+        Info: 52: + IC(2.700 ns) + CELL(2.700 ns) = 215.200 ns; Loc. = LC3_B46; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[6]~65'
+        Info: 53: + IC(4.000 ns) + CELL(2.700 ns) = 221.900 ns; Loc. = LC4_B20; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[7]~57'
+        Info: 54: + IC(0.500 ns) + CELL(2.700 ns) = 225.100 ns; Loc. = LC1_B20; Fanout = 3; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]~25'
+        Info: 55: + IC(4.700 ns) + CELL(2.700 ns) = 232.500 ns; Loc. = LC3_B36; Fanout = 7; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|StageOut[74]~167'
+        Info: 56: + IC(4.800 ns) + CELL(2.700 ns) = 240.000 ns; Loc. = LC7_C43; Fanout = 1; COMB Node = 'codificador7Segmentos:mostrarDecimalesDisplay|Mux0~5'
+        Info: 57: + IC(4.000 ns) + CELL(5.000 ns) = 249.000 ns; Loc. = PIN_17; Fanout = 0; PIN Node = 'decimalesDisplay[6]'
+        Info: Total cell delay = 118.800 ns ( 47.71 % )
+        Info: Total interconnect delay = 130.200 ns ( 52.29 % )
+Info: Longest tpd from source pin "INT" to destination pin "INT_OUT" is 28.700 ns
+    Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_119; Fanout = 3; PIN Node = 'INT'
+    Info: 2: + IC(7.600 ns) + CELL(2.400 ns) = 20.300 ns; Loc. = LC4_A24; Fanout = 1; COMB Node = 'INT_OUT~0'
+    Info: 3: + IC(3.400 ns) + CELL(5.000 ns) = 28.700 ns; Loc. = PIN_97; Fanout = 0; PIN Node = 'INT_OUT'
+    Info: Total cell delay = 17.700 ns ( 61.67 % )
+    Info: Total interconnect delay = 11.000 ns ( 38.33 % )
+Info: th for register "voltaje[6]" (data pin = "D[6]", clock pin = "reloj") is -7.300 ns
+    Info: + Longest clock path from clock "reloj" to destination register is 7.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 19; CLK Node = 'reloj'
+        Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC1_G7; Fanout = 9; REG Node = 'voltaje[6]'
+        Info: Total cell delay = 2.900 ns ( 41.43 % )
+        Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro hold delay of destination is 3.100 ns
+    Info: - Shortest pin to register delay is 17.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_114; Fanout = 1; PIN Node = 'D[6]'
+        Info: 2: + IC(5.400 ns) + CELL(1.700 ns) = 17.400 ns; Loc. = LC1_G7; Fanout = 9; REG Node = 'voltaje[6]'
+        Info: Total cell delay = 12.000 ns ( 68.97 % )
+        Info: Total interconnect delay = 5.400 ns ( 31.03 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 193 megabytes
+    Info: Processing ended: Thu May 23 01:19:18 2013
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:01
+
+

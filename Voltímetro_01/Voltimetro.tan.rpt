@@ -1,0 +1,596 @@
+Classic Timing Analyzer report for Voltimetro
+Tue Apr 30 20:42:09 2013
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'reloj'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+-----------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                              ; To                                ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+-----------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 10.000 ns                        ; D[1]                              ; voltaje[1]                        ; --         ; INT      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 266.600 ns                       ; voltaje[2]                        ; decimalesDisplay[3]               ; INT        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 2.400 ns                         ; D[5]                              ; voltaje[5]                        ; --         ; INT      ; 0            ;
+; Clock Setup: 'reloj'         ; N/A   ; None          ; 47.17 MHz ( period = 21.200 ns ) ; \obtencionFrecuenciaMuestreo:i[0] ; \obtencionFrecuenciaMuestreo:i[0] ; reloj      ; reloj    ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                   ;                                   ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+-----------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPF10K70RC240-4    ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; reloj           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; INT             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'reloj'                                                                                                                                                                                                                                                                ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                               ; To                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 47.17 MHz ( period = 21.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 17.200 ns               ;
+; N/A                                     ; 48.54 MHz ( period = 20.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 16.600 ns               ;
+; N/A                                     ; 48.54 MHz ( period = 20.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 16.600 ns               ;
+; N/A                                     ; 50.25 MHz ( period = 19.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 15.900 ns               ;
+; N/A                                     ; 51.81 MHz ( period = 19.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 15.300 ns               ;
+; N/A                                     ; 51.81 MHz ( period = 19.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 15.300 ns               ;
+; N/A                                     ; 52.63 MHz ( period = 19.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 15.000 ns               ;
+; N/A                                     ; 52.63 MHz ( period = 19.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 15.000 ns               ;
+; N/A                                     ; 53.48 MHz ( period = 18.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 14.700 ns               ;
+; N/A                                     ; 54.05 MHz ( period = 18.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 14.500 ns               ;
+; N/A                                     ; 54.05 MHz ( period = 18.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 14.500 ns               ;
+; N/A                                     ; 54.05 MHz ( period = 18.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 14.500 ns               ;
+; N/A                                     ; 54.35 MHz ( period = 18.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A                                     ; 54.35 MHz ( period = 18.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A                                     ; 54.35 MHz ( period = 18.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A                                     ; 54.35 MHz ( period = 18.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 14.400 ns               ;
+; N/A                                     ; 54.95 MHz ( period = 18.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 14.200 ns               ;
+; N/A                                     ; 54.95 MHz ( period = 18.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 14.200 ns               ;
+; N/A                                     ; 54.95 MHz ( period = 18.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 14.200 ns               ;
+; N/A                                     ; 55.25 MHz ( period = 18.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 14.100 ns               ;
+; N/A                                     ; 55.25 MHz ( period = 18.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 14.100 ns               ;
+; N/A                                     ; 55.87 MHz ( period = 17.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 13.900 ns               ;
+; N/A                                     ; 55.87 MHz ( period = 17.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 13.900 ns               ;
+; N/A                                     ; 55.87 MHz ( period = 17.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 13.900 ns               ;
+; N/A                                     ; 55.87 MHz ( period = 17.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 13.900 ns               ;
+; N/A                                     ; 55.87 MHz ( period = 17.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 13.900 ns               ;
+; N/A                                     ; 56.50 MHz ( period = 17.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 13.700 ns               ;
+; N/A                                     ; 56.50 MHz ( period = 17.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 13.700 ns               ;
+; N/A                                     ; 56.50 MHz ( period = 17.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 13.700 ns               ;
+; N/A                                     ; 56.82 MHz ( period = 17.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 13.600 ns               ;
+; N/A                                     ; 56.82 MHz ( period = 17.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 13.600 ns               ;
+; N/A                                     ; 56.82 MHz ( period = 17.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 13.600 ns               ;
+; N/A                                     ; 56.82 MHz ( period = 17.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 13.600 ns               ;
+; N/A                                     ; 56.82 MHz ( period = 17.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 13.600 ns               ;
+; N/A                                     ; 56.82 MHz ( period = 17.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 13.600 ns               ;
+; N/A                                     ; 57.80 MHz ( period = 17.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 13.300 ns               ;
+; N/A                                     ; 57.80 MHz ( period = 17.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 13.300 ns               ;
+; N/A                                     ; 57.80 MHz ( period = 17.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 13.300 ns               ;
+; N/A                                     ; 57.80 MHz ( period = 17.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 13.300 ns               ;
+; N/A                                     ; 58.48 MHz ( period = 17.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A                                     ; 58.48 MHz ( period = 17.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A                                     ; 58.48 MHz ( period = 17.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A                                     ; 58.48 MHz ( period = 17.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A                                     ; 58.48 MHz ( period = 17.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A                                     ; 58.48 MHz ( period = 17.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 13.100 ns               ;
+; N/A                                     ; 58.82 MHz ( period = 17.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 13.000 ns               ;
+; N/A                                     ; 58.82 MHz ( period = 17.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 13.000 ns               ;
+; N/A                                     ; 58.82 MHz ( period = 17.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 13.000 ns               ;
+; N/A                                     ; 58.82 MHz ( period = 17.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 13.000 ns               ;
+; N/A                                     ; 58.82 MHz ( period = 17.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 13.000 ns               ;
+; N/A                                     ; 59.17 MHz ( period = 16.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 12.900 ns               ;
+; N/A                                     ; 59.52 MHz ( period = 16.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 12.800 ns               ;
+; N/A                                     ; 59.88 MHz ( period = 16.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 12.700 ns               ;
+; N/A                                     ; 59.88 MHz ( period = 16.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 12.700 ns               ;
+; N/A                                     ; 59.88 MHz ( period = 16.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 12.700 ns               ;
+; N/A                                     ; 59.88 MHz ( period = 16.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 12.700 ns               ;
+; N/A                                     ; 59.88 MHz ( period = 16.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 12.700 ns               ;
+; N/A                                     ; 59.88 MHz ( period = 16.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[8]  ; reloj      ; reloj    ; None                        ; None                      ; 12.700 ns               ;
+; N/A                                     ; 60.61 MHz ( period = 16.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 12.500 ns               ;
+; N/A                                     ; 60.61 MHz ( period = 16.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 12.500 ns               ;
+; N/A                                     ; 60.61 MHz ( period = 16.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 12.500 ns               ;
+; N/A                                     ; 60.98 MHz ( period = 16.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 12.400 ns               ;
+; N/A                                     ; 60.98 MHz ( period = 16.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 12.400 ns               ;
+; N/A                                     ; 60.98 MHz ( period = 16.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 12.400 ns               ;
+; N/A                                     ; 60.98 MHz ( period = 16.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 12.400 ns               ;
+; N/A                                     ; 60.98 MHz ( period = 16.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 12.400 ns               ;
+; N/A                                     ; 60.98 MHz ( period = 16.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 12.400 ns               ;
+; N/A                                     ; 60.98 MHz ( period = 16.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[8]  ; reloj      ; reloj    ; None                        ; None                      ; 12.400 ns               ;
+; N/A                                     ; 61.35 MHz ( period = 16.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 12.300 ns               ;
+; N/A                                     ; 61.35 MHz ( period = 16.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 12.300 ns               ;
+; N/A                                     ; 61.73 MHz ( period = 16.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 12.200 ns               ;
+; N/A                                     ; 61.73 MHz ( period = 16.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 12.200 ns               ;
+; N/A                                     ; 62.11 MHz ( period = 16.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 12.100 ns               ;
+; N/A                                     ; 62.11 MHz ( period = 16.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 12.100 ns               ;
+; N/A                                     ; 62.11 MHz ( period = 16.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 12.100 ns               ;
+; N/A                                     ; 62.11 MHz ( period = 16.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[8]  ; reloj      ; reloj    ; None                        ; None                      ; 12.100 ns               ;
+; N/A                                     ; 62.89 MHz ( period = 15.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 11.900 ns               ;
+; N/A                                     ; 62.89 MHz ( period = 15.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 11.900 ns               ;
+; N/A                                     ; 63.29 MHz ( period = 15.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 11.800 ns               ;
+; N/A                                     ; 63.29 MHz ( period = 15.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 11.800 ns               ;
+; N/A                                     ; 63.29 MHz ( period = 15.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 11.800 ns               ;
+; N/A                                     ; 63.29 MHz ( period = 15.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 11.800 ns               ;
+; N/A                                     ; 63.29 MHz ( period = 15.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[8]  ; reloj      ; reloj    ; None                        ; None                      ; 11.800 ns               ;
+; N/A                                     ; 63.29 MHz ( period = 15.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[8]  ; reloj      ; reloj    ; None                        ; None                      ; 11.800 ns               ;
+; N/A                                     ; 63.29 MHz ( period = 15.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 11.800 ns               ;
+; N/A                                     ; 63.29 MHz ( period = 15.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 11.800 ns               ;
+; N/A                                     ; 63.29 MHz ( period = 15.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 11.800 ns               ;
+; N/A                                     ; 63.69 MHz ( period = 15.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 11.700 ns               ;
+; N/A                                     ; 63.69 MHz ( period = 15.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 11.700 ns               ;
+; N/A                                     ; 64.10 MHz ( period = 15.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 11.600 ns               ;
+; N/A                                     ; 64.52 MHz ( period = 15.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 11.500 ns               ;
+; N/A                                     ; 64.52 MHz ( period = 15.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 11.500 ns               ;
+; N/A                                     ; 64.52 MHz ( period = 15.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 11.500 ns               ;
+; N/A                                     ; 64.94 MHz ( period = 15.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 11.400 ns               ;
+; N/A                                     ; 65.36 MHz ( period = 15.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 11.300 ns               ;
+; N/A                                     ; 65.36 MHz ( period = 15.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 11.300 ns               ;
+; N/A                                     ; 65.36 MHz ( period = 15.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 11.300 ns               ;
+; N/A                                     ; 65.79 MHz ( period = 15.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 11.200 ns               ;
+; N/A                                     ; 65.79 MHz ( period = 15.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[8]  ; reloj      ; reloj    ; None                        ; None                      ; 11.200 ns               ;
+; N/A                                     ; 66.23 MHz ( period = 15.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[13] ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 11.100 ns               ;
+; N/A                                     ; 66.23 MHz ( period = 15.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; \obtencionFrecuenciaMuestreo:i[0]  ; reloj      ; reloj    ; None                        ; None                      ; 11.100 ns               ;
+; N/A                                     ; 66.67 MHz ( period = 15.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 11.000 ns               ;
+; N/A                                     ; 66.67 MHz ( period = 15.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 11.000 ns               ;
+; N/A                                     ; 66.67 MHz ( period = 15.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 11.000 ns               ;
+; N/A                                     ; 66.67 MHz ( period = 15.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 11.000 ns               ;
+; N/A                                     ; 66.67 MHz ( period = 15.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 11.000 ns               ;
+; N/A                                     ; 66.67 MHz ( period = 15.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 11.000 ns               ;
+; N/A                                     ; 66.67 MHz ( period = 15.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 11.000 ns               ;
+; N/A                                     ; 66.67 MHz ( period = 15.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 11.000 ns               ;
+; N/A                                     ; 67.57 MHz ( period = 14.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 10.800 ns               ;
+; N/A                                     ; 67.57 MHz ( period = 14.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[5]  ; reloj      ; reloj    ; None                        ; None                      ; 10.800 ns               ;
+; N/A                                     ; 67.57 MHz ( period = 14.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 10.800 ns               ;
+; N/A                                     ; 68.03 MHz ( period = 14.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 10.700 ns               ;
+; N/A                                     ; 68.03 MHz ( period = 14.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 10.700 ns               ;
+; N/A                                     ; 68.03 MHz ( period = 14.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 10.700 ns               ;
+; N/A                                     ; 68.03 MHz ( period = 14.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 10.700 ns               ;
+; N/A                                     ; 68.03 MHz ( period = 14.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 10.700 ns               ;
+; N/A                                     ; 68.03 MHz ( period = 14.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[8]  ; reloj      ; reloj    ; None                        ; None                      ; 10.700 ns               ;
+; N/A                                     ; 68.49 MHz ( period = 14.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 10.600 ns               ;
+; N/A                                     ; 68.97 MHz ( period = 14.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[13] ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 10.500 ns               ;
+; N/A                                     ; 68.97 MHz ( period = 14.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; senialMuestreo                     ; reloj      ; reloj    ; None                        ; None                      ; 10.500 ns               ;
+; N/A                                     ; 68.97 MHz ( period = 14.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[5]  ; reloj      ; reloj    ; None                        ; None                      ; 10.500 ns               ;
+; N/A                                     ; 68.97 MHz ( period = 14.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 10.500 ns               ;
+; N/A                                     ; 68.97 MHz ( period = 14.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[13] ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 10.500 ns               ;
+; N/A                                     ; 68.97 MHz ( period = 14.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; senialMuestreo~2                   ; reloj      ; reloj    ; None                        ; None                      ; 10.500 ns               ;
+; N/A                                     ; 69.44 MHz ( period = 14.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 10.400 ns               ;
+; N/A                                     ; 69.44 MHz ( period = 14.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 10.400 ns               ;
+; N/A                                     ; 69.44 MHz ( period = 14.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 10.400 ns               ;
+; N/A                                     ; 69.44 MHz ( period = 14.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 10.400 ns               ;
+; N/A                                     ; 69.44 MHz ( period = 14.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 10.400 ns               ;
+; N/A                                     ; 69.44 MHz ( period = 14.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 10.400 ns               ;
+; N/A                                     ; 69.44 MHz ( period = 14.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 10.400 ns               ;
+; N/A                                     ; 69.93 MHz ( period = 14.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[5]  ; reloj      ; reloj    ; None                        ; None                      ; 10.300 ns               ;
+; N/A                                     ; 69.93 MHz ( period = 14.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 10.300 ns               ;
+; N/A                                     ; 70.42 MHz ( period = 14.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 10.200 ns               ;
+; N/A                                     ; 70.42 MHz ( period = 14.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[13] ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 10.200 ns               ;
+; N/A                                     ; 70.42 MHz ( period = 14.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 10.200 ns               ;
+; N/A                                     ; 70.42 MHz ( period = 14.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[6]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 10.200 ns               ;
+; N/A                                     ; 70.42 MHz ( period = 14.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 10.200 ns               ;
+; N/A                                     ; 70.42 MHz ( period = 14.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[5]  ; reloj      ; reloj    ; None                        ; None                      ; 10.200 ns               ;
+; N/A                                     ; 70.42 MHz ( period = 14.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 10.200 ns               ;
+; N/A                                     ; 70.92 MHz ( period = 14.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 10.100 ns               ;
+; N/A                                     ; 70.92 MHz ( period = 14.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 10.100 ns               ;
+; N/A                                     ; 70.92 MHz ( period = 14.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 10.100 ns               ;
+; N/A                                     ; 70.92 MHz ( period = 14.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 10.100 ns               ;
+; N/A                                     ; 70.92 MHz ( period = 14.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 10.100 ns               ;
+; N/A                                     ; 70.92 MHz ( period = 14.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[3]  ; reloj      ; reloj    ; None                        ; None                      ; 10.100 ns               ;
+; N/A                                     ; 70.92 MHz ( period = 14.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 10.100 ns               ;
+; N/A                                     ; 70.92 MHz ( period = 14.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[8]  ; reloj      ; reloj    ; None                        ; None                      ; 10.100 ns               ;
+; N/A                                     ; 71.43 MHz ( period = 14.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[8]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 10.000 ns               ;
+; N/A                                     ; 71.94 MHz ( period = 13.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[5]  ; reloj      ; reloj    ; None                        ; None                      ; 9.900 ns                ;
+; N/A                                     ; 71.94 MHz ( period = 13.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[3]  ; reloj      ; reloj    ; None                        ; None                      ; 9.900 ns                ;
+; N/A                                     ; 71.94 MHz ( period = 13.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[1]  ; \obtencionFrecuenciaMuestreo:i[1]  ; reloj      ; reloj    ; None                        ; None                      ; 9.900 ns                ;
+; N/A                                     ; 71.94 MHz ( period = 13.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 9.900 ns                ;
+; N/A                                     ; 71.94 MHz ( period = 13.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 9.900 ns                ;
+; N/A                                     ; 71.94 MHz ( period = 13.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[9]  ; reloj      ; reloj    ; None                        ; None                      ; 9.900 ns                ;
+; N/A                                     ; 71.94 MHz ( period = 13.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[8]  ; reloj      ; reloj    ; None                        ; None                      ; 9.900 ns                ;
+; N/A                                     ; 72.46 MHz ( period = 13.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[13] ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 9.800 ns                ;
+; N/A                                     ; 72.46 MHz ( period = 13.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[2]  ; \obtencionFrecuenciaMuestreo:i[3]  ; reloj      ; reloj    ; None                        ; None                      ; 9.800 ns                ;
+; N/A                                     ; 72.46 MHz ( period = 13.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[11] ; reloj      ; reloj    ; None                        ; None                      ; 9.800 ns                ;
+; N/A                                     ; 72.46 MHz ( period = 13.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[10] ; reloj      ; reloj    ; None                        ; None                      ; 9.800 ns                ;
+; N/A                                     ; 74.63 MHz ( period = 13.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 9.400 ns                ;
+; N/A                                     ; 74.63 MHz ( period = 13.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; \obtencionFrecuenciaMuestreo:i[14] ; reloj      ; reloj    ; None                        ; None                      ; 9.400 ns                ;
+; N/A                                     ; 74.63 MHz ( period = 13.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 9.400 ns                ;
+; N/A                                     ; 74.63 MHz ( period = 13.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 9.400 ns                ;
+; N/A                                     ; 74.63 MHz ( period = 13.400 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 9.400 ns                ;
+; N/A                                     ; 75.19 MHz ( period = 13.300 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 9.300 ns                ;
+; N/A                                     ; 75.76 MHz ( period = 13.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 9.200 ns                ;
+; N/A                                     ; 75.76 MHz ( period = 13.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 9.200 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[11] ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[10] ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 77.52 MHz ( period = 12.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[9]  ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 8.900 ns                ;
+; N/A                                     ; 78.13 MHz ( period = 12.800 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[5]  ; reloj      ; reloj    ; None                        ; None                      ; 8.800 ns                ;
+; N/A                                     ; 82.64 MHz ( period = 12.100 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[3]  ; reloj      ; reloj    ; None                        ; None                      ; 8.100 ns                ;
+; N/A                                     ; 84.03 MHz ( period = 11.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 7.900 ns                ;
+; N/A                                     ; 84.03 MHz ( period = 11.900 ns )                    ; \obtencionFrecuenciaMuestreo:i[5]  ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 7.900 ns                ;
+; N/A                                     ; 86.21 MHz ( period = 11.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[13] ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 7.600 ns                ;
+; N/A                                     ; 86.21 MHz ( period = 11.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 7.600 ns                ;
+; N/A                                     ; 86.21 MHz ( period = 11.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[13] ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 7.600 ns                ;
+; N/A                                     ; 86.21 MHz ( period = 11.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; \obtencionFrecuenciaMuestreo:i[7]  ; reloj      ; reloj    ; None                        ; None                      ; 7.600 ns                ;
+; N/A                                     ; 86.21 MHz ( period = 11.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[13] ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 7.600 ns                ;
+; N/A                                     ; 86.21 MHz ( period = 11.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 7.600 ns                ;
+; N/A                                     ; 86.21 MHz ( period = 11.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[13] ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 7.600 ns                ;
+; N/A                                     ; 86.21 MHz ( period = 11.600 ns )                    ; \obtencionFrecuenciaMuestreo:i[12] ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 7.600 ns                ;
+; N/A                                     ; 86.96 MHz ( period = 11.500 ns )                    ; \obtencionFrecuenciaMuestreo:i[0]  ; \obtencionFrecuenciaMuestreo:i[1]  ; reloj      ; reloj    ; None                        ; None                      ; 7.500 ns                ;
+; N/A                                     ; 89.29 MHz ( period = 11.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; \obtencionFrecuenciaMuestreo:i[13] ; reloj      ; reloj    ; None                        ; None                      ; 7.200 ns                ;
+; N/A                                     ; 89.29 MHz ( period = 11.200 ns )                    ; \obtencionFrecuenciaMuestreo:i[14] ; \obtencionFrecuenciaMuestreo:i[12] ; reloj      ; reloj    ; None                        ; None                      ; 7.200 ns                ;
+; N/A                                     ; 90.91 MHz ( period = 11.000 ns )                    ; \obtencionFrecuenciaMuestreo:i[3]  ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 7.000 ns                ;
+; N/A                                     ; 103.09 MHz ( period = 9.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[4]  ; \obtencionFrecuenciaMuestreo:i[2]  ; reloj      ; reloj    ; None                        ; None                      ; 5.700 ns                ;
+; N/A                                     ; 103.09 MHz ( period = 9.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[6]  ; reloj      ; reloj    ; None                        ; None                      ; 5.700 ns                ;
+; N/A                                     ; 103.09 MHz ( period = 9.700 ns )                    ; \obtencionFrecuenciaMuestreo:i[7]  ; \obtencionFrecuenciaMuestreo:i[4]  ; reloj      ; reloj    ; None                        ; None                      ; 5.700 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                    ;                                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------+
+; tsu                                                              ;
++-------+--------------+------------+------+------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To         ; To Clock ;
++-------+--------------+------------+------+------------+----------+
+; N/A   ; None         ; 10.000 ns  ; D[1] ; voltaje[1] ; INT      ;
+; N/A   ; None         ; 9.500 ns   ; D[0] ; voltaje[0] ; INT      ;
+; N/A   ; None         ; 9.000 ns   ; D[2] ; voltaje[2] ; INT      ;
+; N/A   ; None         ; 8.900 ns   ; D[3] ; voltaje[3] ; INT      ;
+; N/A   ; None         ; 3.800 ns   ; D[6] ; voltaje[6] ; INT      ;
+; N/A   ; None         ; 3.800 ns   ; D[4] ; voltaje[4] ; INT      ;
+; N/A   ; None         ; 3.700 ns   ; D[7] ; voltaje[7] ; INT      ;
+; N/A   ; None         ; 3.300 ns   ; D[5] ; voltaje[5] ; INT      ;
++-------+--------------+------------+------+------------+----------+
+
+
++-----------------------------------------------------------------------------------------+
+; tco                                                                                     ;
++-------+--------------+------------+------------------+---------------------+------------+
+; Slack ; Required tco ; Actual tco ; From             ; To                  ; From Clock ;
++-------+--------------+------------+------------------+---------------------+------------+
+; N/A   ; None         ; 266.600 ns ; voltaje[2]       ; decimalesDisplay[3] ; INT        ;
+; N/A   ; None         ; 266.400 ns ; voltaje[2]       ; decimalesDisplay[2] ; INT        ;
+; N/A   ; None         ; 266.400 ns ; voltaje[2]       ; decimalesDisplay[1] ; INT        ;
+; N/A   ; None         ; 266.400 ns ; voltaje[2]       ; decimalesDisplay[0] ; INT        ;
+; N/A   ; None         ; 266.100 ns ; voltaje[2]       ; decimalesDisplay[4] ; INT        ;
+; N/A   ; None         ; 266.100 ns ; voltaje[1]       ; decimalesDisplay[3] ; INT        ;
+; N/A   ; None         ; 265.900 ns ; voltaje[1]       ; decimalesDisplay[2] ; INT        ;
+; N/A   ; None         ; 265.900 ns ; voltaje[1]       ; decimalesDisplay[1] ; INT        ;
+; N/A   ; None         ; 265.900 ns ; voltaje[1]       ; decimalesDisplay[0] ; INT        ;
+; N/A   ; None         ; 265.600 ns ; voltaje[1]       ; decimalesDisplay[4] ; INT        ;
+; N/A   ; None         ; 265.300 ns ; voltaje[2]       ; decimalesDisplay[6] ; INT        ;
+; N/A   ; None         ; 264.800 ns ; voltaje[1]       ; decimalesDisplay[6] ; INT        ;
+; N/A   ; None         ; 264.000 ns ; voltaje[0]       ; decimalesDisplay[3] ; INT        ;
+; N/A   ; None         ; 263.900 ns ; voltaje[2]       ; decimalesDisplay[5] ; INT        ;
+; N/A   ; None         ; 263.900 ns ; voltaje[3]       ; decimalesDisplay[3] ; INT        ;
+; N/A   ; None         ; 263.800 ns ; voltaje[0]       ; decimalesDisplay[2] ; INT        ;
+; N/A   ; None         ; 263.800 ns ; voltaje[0]       ; decimalesDisplay[1] ; INT        ;
+; N/A   ; None         ; 263.800 ns ; voltaje[0]       ; decimalesDisplay[0] ; INT        ;
+; N/A   ; None         ; 263.700 ns ; voltaje[3]       ; decimalesDisplay[2] ; INT        ;
+; N/A   ; None         ; 263.700 ns ; voltaje[3]       ; decimalesDisplay[1] ; INT        ;
+; N/A   ; None         ; 263.700 ns ; voltaje[3]       ; decimalesDisplay[0] ; INT        ;
+; N/A   ; None         ; 263.500 ns ; voltaje[0]       ; decimalesDisplay[4] ; INT        ;
+; N/A   ; None         ; 263.400 ns ; voltaje[1]       ; decimalesDisplay[5] ; INT        ;
+; N/A   ; None         ; 263.400 ns ; voltaje[3]       ; decimalesDisplay[4] ; INT        ;
+; N/A   ; None         ; 262.700 ns ; voltaje[0]       ; decimalesDisplay[6] ; INT        ;
+; N/A   ; None         ; 262.600 ns ; voltaje[3]       ; decimalesDisplay[6] ; INT        ;
+; N/A   ; None         ; 261.300 ns ; voltaje[0]       ; decimalesDisplay[5] ; INT        ;
+; N/A   ; None         ; 261.200 ns ; voltaje[3]       ; decimalesDisplay[5] ; INT        ;
+; N/A   ; None         ; 260.700 ns ; voltaje[5]       ; decimalesDisplay[3] ; INT        ;
+; N/A   ; None         ; 260.600 ns ; voltaje[4]       ; decimalesDisplay[3] ; INT        ;
+; N/A   ; None         ; 260.500 ns ; voltaje[5]       ; decimalesDisplay[2] ; INT        ;
+; N/A   ; None         ; 260.500 ns ; voltaje[5]       ; decimalesDisplay[1] ; INT        ;
+; N/A   ; None         ; 260.500 ns ; voltaje[5]       ; decimalesDisplay[0] ; INT        ;
+; N/A   ; None         ; 260.400 ns ; voltaje[4]       ; decimalesDisplay[2] ; INT        ;
+; N/A   ; None         ; 260.400 ns ; voltaje[4]       ; decimalesDisplay[1] ; INT        ;
+; N/A   ; None         ; 260.400 ns ; voltaje[4]       ; decimalesDisplay[0] ; INT        ;
+; N/A   ; None         ; 260.200 ns ; voltaje[5]       ; decimalesDisplay[4] ; INT        ;
+; N/A   ; None         ; 260.100 ns ; voltaje[4]       ; decimalesDisplay[4] ; INT        ;
+; N/A   ; None         ; 259.500 ns ; voltaje[7]       ; decimalesDisplay[3] ; INT        ;
+; N/A   ; None         ; 259.400 ns ; voltaje[5]       ; decimalesDisplay[6] ; INT        ;
+; N/A   ; None         ; 259.300 ns ; voltaje[4]       ; decimalesDisplay[6] ; INT        ;
+; N/A   ; None         ; 259.300 ns ; voltaje[7]       ; decimalesDisplay[2] ; INT        ;
+; N/A   ; None         ; 259.300 ns ; voltaje[7]       ; decimalesDisplay[1] ; INT        ;
+; N/A   ; None         ; 259.300 ns ; voltaje[7]       ; decimalesDisplay[0] ; INT        ;
+; N/A   ; None         ; 259.000 ns ; voltaje[7]       ; decimalesDisplay[4] ; INT        ;
+; N/A   ; None         ; 258.200 ns ; voltaje[7]       ; decimalesDisplay[6] ; INT        ;
+; N/A   ; None         ; 258.100 ns ; voltaje[6]       ; decimalesDisplay[3] ; INT        ;
+; N/A   ; None         ; 258.000 ns ; voltaje[5]       ; decimalesDisplay[5] ; INT        ;
+; N/A   ; None         ; 257.900 ns ; voltaje[4]       ; decimalesDisplay[5] ; INT        ;
+; N/A   ; None         ; 257.900 ns ; voltaje[6]       ; decimalesDisplay[2] ; INT        ;
+; N/A   ; None         ; 257.900 ns ; voltaje[6]       ; decimalesDisplay[1] ; INT        ;
+; N/A   ; None         ; 257.900 ns ; voltaje[6]       ; decimalesDisplay[0] ; INT        ;
+; N/A   ; None         ; 257.600 ns ; voltaje[6]       ; decimalesDisplay[4] ; INT        ;
+; N/A   ; None         ; 256.800 ns ; voltaje[6]       ; decimalesDisplay[6] ; INT        ;
+; N/A   ; None         ; 256.800 ns ; voltaje[7]       ; decimalesDisplay[5] ; INT        ;
+; N/A   ; None         ; 255.400 ns ; voltaje[6]       ; decimalesDisplay[5] ; INT        ;
+; N/A   ; None         ; 232.900 ns ; voltaje[2]       ; unidadesDisplay[6]  ; INT        ;
+; N/A   ; None         ; 232.900 ns ; voltaje[2]       ; unidadesDisplay[5]  ; INT        ;
+; N/A   ; None         ; 232.900 ns ; voltaje[2]       ; unidadesDisplay[2]  ; INT        ;
+; N/A   ; None         ; 232.600 ns ; voltaje[2]       ; unidadesDisplay[4]  ; INT        ;
+; N/A   ; None         ; 232.400 ns ; voltaje[1]       ; unidadesDisplay[6]  ; INT        ;
+; N/A   ; None         ; 232.400 ns ; voltaje[1]       ; unidadesDisplay[5]  ; INT        ;
+; N/A   ; None         ; 232.400 ns ; voltaje[1]       ; unidadesDisplay[2]  ; INT        ;
+; N/A   ; None         ; 232.100 ns ; voltaje[1]       ; unidadesDisplay[4]  ; INT        ;
+; N/A   ; None         ; 231.800 ns ; voltaje[2]       ; unidadesDisplay[0]  ; INT        ;
+; N/A   ; None         ; 231.300 ns ; voltaje[1]       ; unidadesDisplay[0]  ; INT        ;
+; N/A   ; None         ; 230.300 ns ; voltaje[0]       ; unidadesDisplay[6]  ; INT        ;
+; N/A   ; None         ; 230.300 ns ; voltaje[0]       ; unidadesDisplay[5]  ; INT        ;
+; N/A   ; None         ; 230.300 ns ; voltaje[0]       ; unidadesDisplay[2]  ; INT        ;
+; N/A   ; None         ; 230.200 ns ; voltaje[3]       ; unidadesDisplay[6]  ; INT        ;
+; N/A   ; None         ; 230.200 ns ; voltaje[3]       ; unidadesDisplay[5]  ; INT        ;
+; N/A   ; None         ; 230.200 ns ; voltaje[3]       ; unidadesDisplay[2]  ; INT        ;
+; N/A   ; None         ; 230.000 ns ; voltaje[0]       ; unidadesDisplay[4]  ; INT        ;
+; N/A   ; None         ; 230.000 ns ; voltaje[2]       ; unidadesDisplay[3]  ; INT        ;
+; N/A   ; None         ; 229.900 ns ; voltaje[3]       ; unidadesDisplay[4]  ; INT        ;
+; N/A   ; None         ; 229.500 ns ; voltaje[1]       ; unidadesDisplay[3]  ; INT        ;
+; N/A   ; None         ; 229.200 ns ; voltaje[0]       ; unidadesDisplay[0]  ; INT        ;
+; N/A   ; None         ; 229.100 ns ; voltaje[3]       ; unidadesDisplay[0]  ; INT        ;
+; N/A   ; None         ; 228.800 ns ; voltaje[2]       ; unidadesDisplay[1]  ; INT        ;
+; N/A   ; None         ; 228.300 ns ; voltaje[1]       ; unidadesDisplay[1]  ; INT        ;
+; N/A   ; None         ; 227.400 ns ; voltaje[0]       ; unidadesDisplay[3]  ; INT        ;
+; N/A   ; None         ; 227.300 ns ; voltaje[3]       ; unidadesDisplay[3]  ; INT        ;
+; N/A   ; None         ; 227.000 ns ; voltaje[5]       ; unidadesDisplay[6]  ; INT        ;
+; N/A   ; None         ; 227.000 ns ; voltaje[5]       ; unidadesDisplay[5]  ; INT        ;
+; N/A   ; None         ; 227.000 ns ; voltaje[5]       ; unidadesDisplay[2]  ; INT        ;
+; N/A   ; None         ; 226.900 ns ; voltaje[4]       ; unidadesDisplay[6]  ; INT        ;
+; N/A   ; None         ; 226.900 ns ; voltaje[4]       ; unidadesDisplay[5]  ; INT        ;
+; N/A   ; None         ; 226.900 ns ; voltaje[4]       ; unidadesDisplay[2]  ; INT        ;
+; N/A   ; None         ; 226.700 ns ; voltaje[5]       ; unidadesDisplay[4]  ; INT        ;
+; N/A   ; None         ; 226.600 ns ; voltaje[4]       ; unidadesDisplay[4]  ; INT        ;
+; N/A   ; None         ; 226.200 ns ; voltaje[0]       ; unidadesDisplay[1]  ; INT        ;
+; N/A   ; None         ; 226.100 ns ; voltaje[3]       ; unidadesDisplay[1]  ; INT        ;
+; N/A   ; None         ; 225.900 ns ; voltaje[5]       ; unidadesDisplay[0]  ; INT        ;
+; N/A   ; None         ; 225.800 ns ; voltaje[7]       ; unidadesDisplay[6]  ; INT        ;
+; N/A   ; None         ; 225.800 ns ; voltaje[7]       ; unidadesDisplay[5]  ; INT        ;
+; N/A   ; None         ; 225.800 ns ; voltaje[7]       ; unidadesDisplay[2]  ; INT        ;
+; N/A   ; None         ; 225.800 ns ; voltaje[4]       ; unidadesDisplay[0]  ; INT        ;
+; N/A   ; None         ; 225.500 ns ; voltaje[7]       ; unidadesDisplay[4]  ; INT        ;
+; N/A   ; None         ; 224.700 ns ; voltaje[7]       ; unidadesDisplay[0]  ; INT        ;
+; N/A   ; None         ; 224.400 ns ; voltaje[6]       ; unidadesDisplay[6]  ; INT        ;
+; N/A   ; None         ; 224.400 ns ; voltaje[6]       ; unidadesDisplay[5]  ; INT        ;
+; N/A   ; None         ; 224.400 ns ; voltaje[6]       ; unidadesDisplay[2]  ; INT        ;
+; N/A   ; None         ; 224.100 ns ; voltaje[6]       ; unidadesDisplay[4]  ; INT        ;
+; N/A   ; None         ; 224.100 ns ; voltaje[5]       ; unidadesDisplay[3]  ; INT        ;
+; N/A   ; None         ; 224.000 ns ; voltaje[4]       ; unidadesDisplay[3]  ; INT        ;
+; N/A   ; None         ; 223.300 ns ; voltaje[6]       ; unidadesDisplay[0]  ; INT        ;
+; N/A   ; None         ; 222.900 ns ; voltaje[7]       ; unidadesDisplay[3]  ; INT        ;
+; N/A   ; None         ; 222.900 ns ; voltaje[5]       ; unidadesDisplay[1]  ; INT        ;
+; N/A   ; None         ; 222.800 ns ; voltaje[4]       ; unidadesDisplay[1]  ; INT        ;
+; N/A   ; None         ; 221.700 ns ; voltaje[7]       ; unidadesDisplay[1]  ; INT        ;
+; N/A   ; None         ; 221.500 ns ; voltaje[6]       ; unidadesDisplay[3]  ; INT        ;
+; N/A   ; None         ; 220.300 ns ; voltaje[6]       ; unidadesDisplay[1]  ; INT        ;
+; N/A   ; None         ; 14.300 ns  ; senialMuestreo~2 ; CS                  ; reloj      ;
+; N/A   ; None         ; 14.300 ns  ; senialMuestreo   ; RD                  ; reloj      ;
++-------+--------------+------------+------------------+---------------------+------------+
+
+
++------------------------------------------------------------------------+
+; th                                                                     ;
++---------------+-------------+-----------+------+------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To         ; To Clock ;
++---------------+-------------+-----------+------+------------+----------+
+; N/A           ; None        ; 2.400 ns  ; D[5] ; voltaje[5] ; INT      ;
+; N/A           ; None        ; 2.000 ns  ; D[7] ; voltaje[7] ; INT      ;
+; N/A           ; None        ; 1.900 ns  ; D[6] ; voltaje[6] ; INT      ;
+; N/A           ; None        ; 1.900 ns  ; D[4] ; voltaje[4] ; INT      ;
+; N/A           ; None        ; -3.200 ns ; D[3] ; voltaje[3] ; INT      ;
+; N/A           ; None        ; -3.300 ns ; D[2] ; voltaje[2] ; INT      ;
+; N/A           ; None        ; -3.800 ns ; D[0] ; voltaje[0] ; INT      ;
+; N/A           ; None        ; -4.300 ns ; D[1] ; voltaje[1] ; INT      ;
++---------------+-------------+-----------+------+------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Apr 30 20:42:08 2013
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Voltimetro -c Voltimetro
+Info: Only one processor detected - disabling parallel compilation
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "reloj" is an undefined clock
+    Info: Assuming node "INT" is an undefined clock
+Info: Clock "reloj" has Internal fmax of 47.17 MHz between source register "\obtencionFrecuenciaMuestreo:i[0]" and destination register "\obtencionFrecuenciaMuestreo:i[0]" (period= 21.2 ns)
+    Info: + Longest register to register delay is 17.200 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC2_I13; Fanout = 3; REG Node = '\obtencionFrecuenciaMuestreo:i[0]'
+        Info: 2: + IC(2.700 ns) + CELL(2.000 ns) = 4.700 ns; Loc. = LC4_I11; Fanout = 1; COMB Node = 'Equal0~19'
+        Info: 3: + IC(0.000 ns) + CELL(2.000 ns) = 6.700 ns; Loc. = LC5_I11; Fanout = 7; COMB Node = 'Equal0~13'
+        Info: 4: + IC(2.800 ns) + CELL(2.700 ns) = 12.200 ns; Loc. = LC8_I12; Fanout = 3; COMB Node = 'Equal0~2'
+        Info: 5: + IC(3.000 ns) + CELL(2.000 ns) = 17.200 ns; Loc. = LC2_I13; Fanout = 3; REG Node = '\obtencionFrecuenciaMuestreo:i[0]'
+        Info: Total cell delay = 8.700 ns ( 50.58 % )
+        Info: Total interconnect delay = 8.500 ns ( 49.42 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "reloj" to destination register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 17; CLK Node = 'reloj'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC2_I13; Fanout = 3; REG Node = '\obtencionFrecuenciaMuestreo:i[0]'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+        Info: - Longest clock path from clock "reloj" to source register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 17; CLK Node = 'reloj'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC2_I13; Fanout = 3; REG Node = '\obtencionFrecuenciaMuestreo:i[0]'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Micro setup delay of destination is 2.600 ns
+Info: No valid register-to-register data paths exist for clock "INT"
+Info: tsu for register "voltaje[1]" (data pin = "D[1]", clock pin = "INT") is 10.000 ns
+    Info: + Longest pin to register delay is 25.100 ns
+        Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_128; Fanout = 1; PIN Node = 'D[1]'
+        Info: 2: + IC(13.100 ns) + CELL(1.700 ns) = 25.100 ns; Loc. = LC1_B9; Fanout = 7; REG Node = 'voltaje[1]'
+        Info: Total cell delay = 12.000 ns ( 47.81 % )
+        Info: Total interconnect delay = 13.100 ns ( 52.19 % )
+    Info: + Micro setup delay of destination is 2.600 ns
+    Info: - Shortest clock path from clock "INT" to destination register is 17.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_119; Fanout = 8; CLK Node = 'INT'
+        Info: 2: + IC(7.400 ns) + CELL(0.000 ns) = 17.700 ns; Loc. = LC1_B9; Fanout = 7; REG Node = 'voltaje[1]'
+        Info: Total cell delay = 10.300 ns ( 58.19 % )
+        Info: Total interconnect delay = 7.400 ns ( 41.81 % )
+Info: tco from clock "INT" to destination pin "decimalesDisplay[3]" through register "voltaje[2]" is 266.600 ns
+    Info: + Longest clock path from clock "INT" to source register is 18.400 ns
+        Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_119; Fanout = 8; CLK Node = 'INT'
+        Info: 2: + IC(8.100 ns) + CELL(0.000 ns) = 18.400 ns; Loc. = LC5_B19; Fanout = 8; REG Node = 'voltaje[2]'
+        Info: Total cell delay = 10.300 ns ( 55.98 % )
+        Info: Total interconnect delay = 8.100 ns ( 44.02 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Longest register to pin delay is 246.800 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC5_B19; Fanout = 8; REG Node = 'voltaje[2]'
+        Info: 2: + IC(2.900 ns) + CELL(2.700 ns) = 5.600 ns; Loc. = LC6_B14; Fanout = 2; COMB Node = 'lpm_mult:Mult0|multcore:mult_core|romout[0][6]~332'
+        Info: 3: + IC(3.600 ns) + CELL(2.700 ns) = 11.900 ns; Loc. = LC6_B32; Fanout = 4; COMB Node = 'lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[2]'
+        Info: 4: + IC(0.500 ns) + CELL(2.400 ns) = 14.800 ns; Loc. = LC3_B32; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[0]~61'
+        Info: 5: + IC(2.900 ns) + CELL(2.400 ns) = 20.100 ns; Loc. = LC4_B41; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~57'
+        Info: 6: + IC(2.500 ns) + CELL(2.400 ns) = 25.000 ns; Loc. = LC2_B40; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[2]~27'
+        Info: 7: + IC(0.500 ns) + CELL(2.400 ns) = 27.900 ns; Loc. = LC3_B40; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]~33'
+        Info: 8: + IC(2.900 ns) + CELL(2.400 ns) = 33.200 ns; Loc. = LC8_B45; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]~39'
+        Info: 9: + IC(0.500 ns) + CELL(2.400 ns) = 36.100 ns; Loc. = LC1_B45; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]~45'
+        Info: 10: + IC(3.000 ns) + CELL(2.400 ns) = 41.500 ns; Loc. = LC7_B27; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]~51'
+        Info: 11: + IC(0.500 ns) + CELL(2.400 ns) = 44.400 ns; Loc. = LC8_B27; Fanout = 30; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~21'
+        Info: 12: + IC(5.600 ns) + CELL(2.400 ns) = 52.400 ns; Loc. = LC6_D17; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|StageOut[65]~292'
+        Info: 13: + IC(5.900 ns) + CELL(1.400 ns) = 59.700 ns; Loc. = LC8_B47; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[3]~COUT'
+        Info: 14: + IC(1.100 ns) + CELL(0.300 ns) = 61.100 ns; Loc. = LC1_B49; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[4]~COUT'
+        Info: 15: + IC(0.000 ns) + CELL(0.300 ns) = 61.400 ns; Loc. = LC2_B49; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[5]~COUT'
+        Info: 16: + IC(0.000 ns) + CELL(0.300 ns) = 61.700 ns; Loc. = LC3_B49; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[6]~COUT'
+        Info: 17: + IC(0.000 ns) + CELL(0.300 ns) = 62.000 ns; Loc. = LC4_B49; Fanout = 1; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[7]~COUT'
+        Info: 18: + IC(0.000 ns) + CELL(1.200 ns) = 63.200 ns; Loc. = LC5_B49; Fanout = 31; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]~25'
+        Info: 19: + IC(8.100 ns) + CELL(2.700 ns) = 74.000 ns; Loc. = LC1_D11; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|StageOut[72]~329'
+        Info: 20: + IC(4.500 ns) + CELL(1.400 ns) = 79.900 ns; Loc. = LC6_B10; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[1]~COUT'
+        Info: 21: + IC(0.000 ns) + CELL(0.300 ns) = 80.200 ns; Loc. = LC7_B10; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[2]~COUT'
+        Info: 22: + IC(0.000 ns) + CELL(0.300 ns) = 80.500 ns; Loc. = LC8_B10; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[3]~COUT'
+        Info: 23: + IC(1.100 ns) + CELL(0.300 ns) = 81.900 ns; Loc. = LC1_B12; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[4]~COUT'
+        Info: 24: + IC(0.000 ns) + CELL(0.300 ns) = 82.200 ns; Loc. = LC2_B12; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[5]~COUT'
+        Info: 25: + IC(0.000 ns) + CELL(0.300 ns) = 82.500 ns; Loc. = LC3_B12; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[6]~COUT'
+        Info: 26: + IC(0.000 ns) + CELL(0.300 ns) = 82.800 ns; Loc. = LC4_B12; Fanout = 1; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[7]~COUT'
+        Info: 27: + IC(0.000 ns) + CELL(1.200 ns) = 84.000 ns; Loc. = LC5_B12; Fanout = 35; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[8]~25'
+        Info: 28: + IC(5.500 ns) + CELL(2.400 ns) = 91.900 ns; Loc. = LC1_D26; Fanout = 3; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|StageOut[82]~326'
+        Info: 29: + IC(4.800 ns) + CELL(1.400 ns) = 98.100 ns; Loc. = LC7_B19; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[2]~COUT'
+        Info: 30: + IC(0.000 ns) + CELL(0.300 ns) = 98.400 ns; Loc. = LC8_B19; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[3]~COUT'
+        Info: 31: + IC(1.100 ns) + CELL(0.300 ns) = 99.800 ns; Loc. = LC1_B21; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[4]~COUT'
+        Info: 32: + IC(0.000 ns) + CELL(0.300 ns) = 100.100 ns; Loc. = LC2_B21; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[5]~COUT'
+        Info: 33: + IC(0.000 ns) + CELL(0.300 ns) = 100.400 ns; Loc. = LC3_B21; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[6]~COUT'
+        Info: 34: + IC(0.000 ns) + CELL(0.300 ns) = 100.700 ns; Loc. = LC4_B21; Fanout = 1; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[7]~COUT'
+        Info: 35: + IC(0.000 ns) + CELL(1.200 ns) = 101.900 ns; Loc. = LC5_B21; Fanout = 29; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[8]~25'
+        Info: 36: + IC(3.300 ns) + CELL(2.700 ns) = 107.900 ns; Loc. = LC1_B16; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[1]~83'
+        Info: 37: + IC(3.000 ns) + CELL(2.400 ns) = 113.300 ns; Loc. = LC2_B6; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[2]~75'
+        Info: 38: + IC(2.700 ns) + CELL(2.400 ns) = 118.400 ns; Loc. = LC4_B2; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[3]~67'
+        Info: 39: + IC(2.700 ns) + CELL(2.400 ns) = 123.500 ns; Loc. = LC1_B1; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[4]~59'
+        Info: 40: + IC(2.800 ns) + CELL(2.400 ns) = 128.700 ns; Loc. = LC7_B3; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[5]~49'
+        Info: 41: + IC(0.500 ns) + CELL(2.400 ns) = 131.600 ns; Loc. = LC1_B3; Fanout = 2; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[6]~33'
+        Info: 42: + IC(3.500 ns) + CELL(2.400 ns) = 137.500 ns; Loc. = LC1_B24; Fanout = 1; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[7]~41'
+        Info: 43: + IC(3.200 ns) + CELL(2.400 ns) = 143.100 ns; Loc. = LC6_B11; Fanout = 22; COMB Node = 'lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[8]~25'
+        Info: 44: + IC(2.900 ns) + CELL(2.400 ns) = 148.400 ns; Loc. = LC1_B13; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~31'
+        Info: 45: + IC(3.000 ns) + CELL(2.400 ns) = 153.800 ns; Loc. = LC1_B26; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[2]~39'
+        Info: 46: + IC(5.200 ns) + CELL(2.400 ns) = 161.400 ns; Loc. = LC1_D8; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]~71'
+        Info: 47: + IC(3.100 ns) + CELL(2.400 ns) = 166.900 ns; Loc. = LC2_D22; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]~63'
+        Info: 48: + IC(3.200 ns) + CELL(2.400 ns) = 172.500 ns; Loc. = LC1_D9; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]~55'
+        Info: 49: + IC(2.800 ns) + CELL(2.400 ns) = 177.700 ns; Loc. = LC3_D12; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]~47'
+        Info: 50: + IC(2.800 ns) + CELL(2.400 ns) = 182.900 ns; Loc. = LC2_D7; Fanout = 14; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~23'
+        Info: 51: + IC(4.400 ns) + CELL(2.700 ns) = 190.000 ns; Loc. = LC2_B8; Fanout = 3; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|StageOut[64]~165'
+        Info: 52: + IC(0.500 ns) + CELL(2.700 ns) = 193.200 ns; Loc. = LC1_B8; Fanout = 2; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[2]~41'
+        Info: 53: + IC(3.200 ns) + CELL(2.400 ns) = 198.800 ns; Loc. = LC4_B26; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[3]~49'
+        Info: 54: + IC(4.800 ns) + CELL(2.400 ns) = 206.000 ns; Loc. = LC7_D22; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[4]~81'
+        Info: 55: + IC(0.500 ns) + CELL(2.400 ns) = 208.900 ns; Loc. = LC1_D22; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[5]~73'
+        Info: 56: + IC(3.200 ns) + CELL(2.400 ns) = 214.500 ns; Loc. = LC4_D9; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[6]~65'
+        Info: 57: + IC(0.500 ns) + CELL(2.400 ns) = 217.400 ns; Loc. = LC2_D9; Fanout = 1; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[7]~57'
+        Info: 58: + IC(2.700 ns) + CELL(2.400 ns) = 222.500 ns; Loc. = LC8_D7; Fanout = 3; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]~25'
+        Info: 59: + IC(4.500 ns) + CELL(2.700 ns) = 229.700 ns; Loc. = LC4_B8; Fanout = 7; COMB Node = 'lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|StageOut[74]~167'
+        Info: 60: + IC(5.200 ns) + CELL(2.700 ns) = 237.600 ns; Loc. = LC3_B37; Fanout = 1; COMB Node = 'codificador7Segmentos:mostrarDecimalesDisplay|Mux3~0'
+        Info: 61: + IC(4.200 ns) + CELL(5.000 ns) = 246.800 ns; Loc. = PIN_20; Fanout = 0; PIN Node = 'decimalesDisplay[3]'
+        Info: Total cell delay = 110.900 ns ( 44.94 % )
+        Info: Total interconnect delay = 135.900 ns ( 55.06 % )
+Info: th for register "voltaje[5]" (data pin = "D[5]", clock pin = "INT") is 2.400 ns
+    Info: + Longest clock path from clock "INT" to destination register is 18.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_119; Fanout = 8; CLK Node = 'INT'
+        Info: 2: + IC(8.200 ns) + CELL(0.000 ns) = 18.500 ns; Loc. = LC4_B23; Fanout = 10; REG Node = 'voltaje[5]'
+        Info: Total cell delay = 10.300 ns ( 55.68 % )
+        Info: Total interconnect delay = 8.200 ns ( 44.32 % )
+    Info: + Micro hold delay of destination is 3.100 ns
+    Info: - Shortest pin to register delay is 19.200 ns
+        Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_115; Fanout = 1; PIN Node = 'D[5]'
+        Info: 2: + IC(7.200 ns) + CELL(1.700 ns) = 19.200 ns; Loc. = LC4_B23; Fanout = 10; REG Node = 'voltaje[5]'
+        Info: Total cell delay = 12.000 ns ( 62.50 % )
+        Info: Total interconnect delay = 7.200 ns ( 37.50 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 140 megabytes
+    Info: Processing ended: Tue Apr 30 20:42:09 2013
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

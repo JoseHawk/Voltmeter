@@ -1,0 +1,6 @@
+
+State Machine - |Voltimetro|senialMuestreo
+Name senialMuestreo.estado3 senialMuestreo.estado2 senialMuestreo.estado1 
+senialMuestreo.estado1 0 0 0 
+senialMuestreo.estado2 0 1 1 
+senialMuestreo.estado3 1 0 1 

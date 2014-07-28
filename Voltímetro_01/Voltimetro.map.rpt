@@ -1,0 +1,747 @@
+Analysis & Synthesis report for Voltimetro
+Tue Apr 30 20:41:54 2013
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. General Register Statistics
+  8. Source assignments for lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder
+  9. Source assignments for lpm_add_sub:Add0|addcore:adder
+ 10. Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0
+ 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 14. Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0
+ 15. lpm_mult Parameter Settings by Entity Instance
+ 16. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                               ;
++-----------------------------+----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Apr 30 20:41:54 2013        ;
+; Quartus II Version          ; 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition ;
+; Revision Name               ; Voltimetro                                   ;
+; Top-level Entity Name       ; Voltimetro                                   ;
+; Family                      ; FLEX10K                                      ;
+; Total logic elements        ; 355                                          ;
+; Total pins                  ; 32                                           ;
+; Total memory bits           ; 0                                            ;
++-----------------------------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                  ;
++--------------------------------------------------------------+-----------------+---------------+
+; Option                                                       ; Setting         ; Default Value ;
++--------------------------------------------------------------+-----------------+---------------+
+; Device                                                       ; EPF10K70RC240-4 ;               ;
+; Top-level entity name                                        ; Voltimetro      ; Voltimetro    ;
+; Family name                                                  ; FLEX10K         ; Stratix II    ;
+; Optimization Technique                                       ; Speed           ; Area          ;
+; Use Generated Physical Constraints File                      ; Off             ;               ;
+; Use smart compilation                                        ; Off             ; Off           ;
+; Create Debugging Nodes for IP Cores                          ; Off             ; Off           ;
+; Preserve fewer node names                                    ; On              ; On            ;
+; Disable OpenCore Plus hardware evaluation                    ; Off             ; Off           ;
+; Verilog Version                                              ; Verilog_2001    ; Verilog_2001  ;
+; VHDL Version                                                 ; VHDL93          ; VHDL93        ;
+; State Machine Processing                                     ; Auto            ; Auto          ;
+; Safe State Machine                                           ; Off             ; Off           ;
+; Extract Verilog State Machines                               ; On              ; On            ;
+; Extract VHDL State Machines                                  ; On              ; On            ;
+; Ignore Verilog initial constructs                            ; Off             ; Off           ;
+; Iteration limit for constant Verilog loops                   ; 5000            ; 5000          ;
+; Iteration limit for non-constant Verilog loops               ; 250             ; 250           ;
+; Add Pass-Through Logic to Inferred RAMs                      ; On              ; On            ;
+; Parallel Synthesis                                           ; Off             ; Off           ;
+; NOT Gate Push-Back                                           ; On              ; On            ;
+; Power-Up Don't Care                                          ; On              ; On            ;
+; Remove Redundant Logic Cells                                 ; Off             ; Off           ;
+; Remove Duplicate Registers                                   ; On              ; On            ;
+; Ignore CARRY Buffers                                         ; Off             ; Off           ;
+; Ignore CASCADE Buffers                                       ; Off             ; Off           ;
+; Ignore GLOBAL Buffers                                        ; Off             ; Off           ;
+; Ignore ROW GLOBAL Buffers                                    ; Off             ; Off           ;
+; Ignore LCELL Buffers                                         ; Off             ; Off           ;
+; Ignore SOFT Buffers                                          ; On              ; On            ;
+; Limit AHDL Integers to 32 Bits                               ; Off             ; Off           ;
+; Auto Implement in ROM                                        ; Off             ; Off           ;
+; Carry Chain Length                                           ; 32              ; 32            ;
+; Cascade Chain Length                                         ; 2               ; 2             ;
+; Auto Carry Chains                                            ; On              ; On            ;
+; Auto Open-Drain Pins                                         ; On              ; On            ;
+; Auto ROM Replacement                                         ; On              ; On            ;
+; Auto RAM Replacement                                         ; On              ; On            ;
+; Auto Clock Enable Replacement                                ; On              ; On            ;
+; Strict RAM Replacement                                       ; Off             ; Off           ;
+; Auto Resource Sharing                                        ; Off             ; Off           ;
+; Allow Any RAM Size For Recognition                           ; Off             ; Off           ;
+; Allow Any ROM Size For Recognition                           ; Off             ; Off           ;
+; Use LogicLock Constraints during Resource Balancing          ; On              ; On            ;
+; Ignore translate_off and synthesis_off directives            ; Off             ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report           ; On              ; On            ;
+; HDL message level                                            ; Level2          ; Level2        ;
+; Suppress Register Optimization Related Messages              ; Off             ; Off           ;
+; Number of Removed Registers Reported in Synthesis Report     ; 100             ; 100           ;
+; Number of Inverted Registers Reported in Synthesis Report    ; 100             ; 100           ;
+; Block Design Naming                                          ; Auto            ; Auto          ;
+; Synthesis Effort                                             ; Auto            ; Auto          ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal ; On              ; On            ;
+; Analysis & Synthesis Message Level                           ; Medium          ; Medium        ;
++--------------------------------------------------------------+-----------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+
+; Voltimetro.vhd                   ; yes             ; User VHDL File               ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/Voltimetro.vhd             ;
+; codificador7Segmentos.vhd        ; yes             ; Auto-Found VHDL File         ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/codificador7Segmentos.vhd  ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/lpm_mult.tdf                               ;
+; aglobal90.inc                    ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/aglobal90.inc                              ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/lpm_add_sub.inc                            ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/multcore.inc                               ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/bypassff.inc                               ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/altshift.inc                               ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/multcore.tdf                               ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/csa_add.inc                                ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/mpar_add.inc                               ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/muleabz.inc                                ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/mul_lfrg.inc                               ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/mul_boothc.inc                             ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/alt_ded_mult.inc                           ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/alt_ded_mult_y.inc                         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/dffpipe.inc                                ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/mpar_add.tdf                               ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/lpm_add_sub.tdf                            ;
+; addcore.inc                      ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/addcore.inc                                ;
+; look_add.inc                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/look_add.inc                               ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                    ;
+; alt_mercury_add_sub.inc          ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/alt_mercury_add_sub.inc                    ;
+; addcore.tdf                      ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/addcore.tdf                                ;
+; a_csnbuffer.inc                  ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/a_csnbuffer.inc                            ;
+; a_csnbuffer.tdf                  ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/a_csnbuffer.tdf                            ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/altshift.tdf                               ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/lpm_divide.tdf                             ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/abs_divider.inc                            ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/fpga/altera/quartus/libraries/megafunctions/sign_div_unsign.inc                        ;
+; db/lpm_divide_b3m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/lpm_divide_b3m.tdf      ;
+; db/sign_div_unsign_0mh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/sign_div_unsign_0mh.tdf ;
+; db/alt_u_div_qne.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/alt_u_div_qne.tdf       ;
+; db/add_sub_a9c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/add_sub_a9c.tdf         ;
+; db/add_sub_b9c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/add_sub_b9c.tdf         ;
+; db/add_sub_i9c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/add_sub_i9c.tdf         ;
+; db/add_sub_c9c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/add_sub_c9c.tdf         ;
+; db/add_sub_d9c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/add_sub_d9c.tdf         ;
+; db/add_sub_e9c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/add_sub_e9c.tdf         ;
+; db/add_sub_f9c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/add_sub_f9c.tdf         ;
+; db/add_sub_g9c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/add_sub_g9c.tdf         ;
+; db/add_sub_h9c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/add_sub_h9c.tdf         ;
+; db/lpm_divide_r1m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/lpm_divide_r1m.tdf      ;
+; db/sign_div_unsign_gkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/sign_div_unsign_gkh.tdf ;
+; db/alt_u_div_qke.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/alt_u_div_qke.tdf       ;
+; db/lpm_divide_3ql.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/lpm_divide_3ql.tdf      ;
+; db/sign_div_unsign_lkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/sign_div_unsign_lkh.tdf ;
+; db/alt_u_div_4le.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Documents and Settings/laraits/Escritorio/Sesión/Voltímetro/db/alt_u_div_4le.tdf       ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                                   ;
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Resource                          ; Usage                                                                                                                                     ;
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+; Total logic elements              ; 355                                                                                                                                       ;
+; Total combinational functions     ; 340                                                                                                                                       ;
+;     -- Total 4-input functions    ; 67                                                                                                                                        ;
+;     -- Total 3-input functions    ; 90                                                                                                                                        ;
+;     -- Total 2-input functions    ; 142                                                                                                                                       ;
+;     -- Total 1-input functions    ; 40                                                                                                                                        ;
+;     -- Total 0-input functions    ; 1                                                                                                                                         ;
+; Total registers                   ; 24                                                                                                                                        ;
+; Total logic cells in carry chains ; 53                                                                                                                                        ;
+; I/O pins                          ; 32                                                                                                                                        ;
+; Maximum fan-out node              ; lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[8]~25 ;
+; Maximum fan-out                   ; 35                                                                                                                                        ;
+; Total fan-out                     ; 967                                                                                                                                       ;
+; Average fan-out                   ; 2.50                                                                                                                                      ;
++-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                           ;
++----------------------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                                                ; Library Name ;
++----------------------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Voltimetro                                        ; 355 (29)    ; 24           ; 0           ; 32   ; 331 (5)      ; 15 (15)           ; 9 (9)            ; 53 (2)          ; 0 (0)      ; |Voltimetro                                                                                                                        ; work         ;
+;    |codificador7Segmentos:mostrarDecimalesDisplay| ; 7 (7)       ; 0            ; 0           ; 0    ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|codificador7Segmentos:mostrarDecimalesDisplay                                                                          ; work         ;
+;    |codificador7Segmentos:mostrarUnidadesDisplay|  ; 7 (7)       ; 0            ; 0           ; 0    ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|codificador7Segmentos:mostrarUnidadesDisplay                                                                           ; work         ;
+;    |lpm_add_sub:Add0|                              ; 14 (0)      ; 0            ; 0           ; 0    ; 14 (0)       ; 0 (0)             ; 0 (0)            ; 14 (0)          ; 0 (0)      ; |Voltimetro|lpm_add_sub:Add0                                                                                                       ; work         ;
+;       |addcore:adder|                              ; 14 (1)      ; 0            ; 0           ; 0    ; 14 (1)       ; 0 (0)             ; 0 (0)            ; 14 (1)          ; 0 (0)      ; |Voltimetro|lpm_add_sub:Add0|addcore:adder                                                                                         ; work         ;
+;          |a_csnbuffer:result_node|                 ; 13 (13)     ; 0            ; 0           ; 0    ; 13 (13)      ; 0 (0)             ; 0 (0)            ; 13 (13)         ; 0 (0)      ; |Voltimetro|lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node                                                                 ; work         ;
+;    |lpm_divide:Div0|                               ; 150 (0)     ; 0            ; 0           ; 0    ; 150 (0)      ; 0 (0)             ; 0 (0)            ; 26 (0)          ; 0 (0)      ; |Voltimetro|lpm_divide:Div0                                                                                                        ; work         ;
+;       |lpm_divide_b3m:auto_generated|              ; 150 (0)     ; 0            ; 0           ; 0    ; 150 (0)      ; 0 (0)             ; 0 (0)            ; 26 (0)          ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated                                                                          ; work         ;
+;          |sign_div_unsign_0mh:divider|             ; 150 (0)     ; 0            ; 0           ; 0    ; 150 (0)      ; 0 (0)             ; 0 (0)            ; 26 (0)          ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider                                              ; work         ;
+;             |alt_u_div_qne:divider|                ; 150 (81)    ; 0            ; 0           ; 0    ; 150 (81)     ; 0 (0)             ; 0 (0)            ; 26 (0)          ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider                        ; work         ;
+;                |add_sub_h9c:add_sub_7|             ; 16 (16)     ; 0            ; 0           ; 0    ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7  ; work         ;
+;                |add_sub_i9c:add_sub_10|            ; 8 (8)       ; 0            ; 0           ; 0    ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10 ; work         ;
+;                |add_sub_i9c:add_sub_11|            ; 16 (16)     ; 0            ; 0           ; 0    ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11 ; work         ;
+;                |add_sub_i9c:add_sub_12|            ; 10 (10)     ; 0            ; 0           ; 0    ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12 ; work         ;
+;                |add_sub_i9c:add_sub_13|            ; 1 (1)       ; 0            ; 0           ; 0    ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_13 ; work         ;
+;                |add_sub_i9c:add_sub_8|             ; 9 (9)       ; 0            ; 0           ; 0    ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8  ; work         ;
+;                |add_sub_i9c:add_sub_9|             ; 9 (9)       ; 0            ; 0           ; 0    ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 9 (9)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9  ; work         ;
+;    |lpm_divide:Div1|                               ; 42 (0)      ; 0            ; 0           ; 0    ; 42 (0)       ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div1                                                                                                        ; work         ;
+;       |lpm_divide_r1m:auto_generated|              ; 42 (0)      ; 0            ; 0           ; 0    ; 42 (0)       ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div1|lpm_divide_r1m:auto_generated                                                                          ; work         ;
+;          |sign_div_unsign_gkh:divider|             ; 42 (0)      ; 0            ; 0           ; 0    ; 42 (0)       ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider                                              ; work         ;
+;             |alt_u_div_qke:divider|                ; 42 (18)     ; 0            ; 0           ; 0    ; 42 (18)      ; 0 (0)             ; 0 (0)            ; 2 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider                        ; work         ;
+;                |add_sub_e9c:add_sub_5|             ; 6 (6)       ; 0            ; 0           ; 0    ; 6 (6)        ; 0 (0)             ; 0 (0)            ; 2 (2)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5  ; work         ;
+;                |add_sub_e9c:add_sub_6|             ; 7 (7)       ; 0            ; 0           ; 0    ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6  ; work         ;
+;                |add_sub_e9c:add_sub_7|             ; 7 (7)       ; 0            ; 0           ; 0    ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7  ; work         ;
+;                |add_sub_e9c:add_sub_8|             ; 4 (4)       ; 0            ; 0           ; 0    ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_8  ; work         ;
+;    |lpm_divide:Mod0|                               ; 82 (0)      ; 0            ; 0           ; 0    ; 82 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Mod0                                                                                                        ; work         ;
+;       |lpm_divide_3ql:auto_generated|              ; 82 (0)      ; 0            ; 0           ; 0    ; 82 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Mod0|lpm_divide_3ql:auto_generated                                                                          ; work         ;
+;          |sign_div_unsign_lkh:divider|             ; 82 (0)      ; 0            ; 0           ; 0    ; 82 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider                                              ; work         ;
+;             |alt_u_div_4le:divider|                ; 82 (35)     ; 0            ; 0           ; 0    ; 82 (35)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider                        ; work         ;
+;                |add_sub_f9c:add_sub_5|             ; 10 (10)     ; 0            ; 0           ; 0    ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5  ; work         ;
+;                |add_sub_g9c:add_sub_6|             ; 12 (12)     ; 0            ; 0           ; 0    ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6  ; work         ;
+;                |add_sub_h9c:add_sub_7|             ; 14 (14)     ; 0            ; 0           ; 0    ; 14 (14)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7  ; work         ;
+;                |add_sub_i9c:add_sub_8|             ; 11 (11)     ; 0            ; 0           ; 0    ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Voltimetro|lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8  ; work         ;
+;    |lpm_mult:Mult0|                                ; 24 (0)      ; 0            ; 0           ; 0    ; 24 (0)       ; 0 (0)             ; 0 (0)            ; 9 (0)           ; 0 (0)      ; |Voltimetro|lpm_mult:Mult0                                                                                                         ; work         ;
+;       |multcore:mult_core|                         ; 24 (15)     ; 0            ; 0           ; 0    ; 24 (15)      ; 0 (0)             ; 0 (0)            ; 9 (0)           ; 0 (0)      ; |Voltimetro|lpm_mult:Mult0|multcore:mult_core                                                                                      ; work         ;
+;          |mpar_add:padder|                         ; 9 (0)       ; 0            ; 0           ; 0    ; 9 (0)        ; 0 (0)             ; 0 (0)            ; 9 (0)           ; 0 (0)      ; |Voltimetro|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ; work         ;
+;             |lpm_add_sub:adder[0]|                 ; 9 (0)       ; 0            ; 0           ; 0    ; 9 (0)        ; 0 (0)             ; 0 (0)            ; 9 (0)           ; 0 (0)      ; |Voltimetro|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ; work         ;
+;                |addcore:adder|                     ; 9 (1)       ; 0            ; 0           ; 0    ; 9 (1)        ; 0 (0)             ; 0 (0)            ; 9 (1)           ; 0 (0)      ; |Voltimetro|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder                                   ; work         ;
+;                   |a_csnbuffer:result_node|        ; 8 (8)       ; 0            ; 0           ; 0    ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 8 (8)           ; 0 (0)      ; |Voltimetro|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node           ; work         ;
++----------------------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 24    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Source assignments for lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder ;
++---------------------------+-------+------+------------------------------------------------------------------+
+; Assignment                ; Value ; From ; To                                                               ;
++---------------------------+-------+------+------------------------------------------------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -                                                                ;
++---------------------------+-------+------+------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Source assignments for lpm_add_sub:Add0|addcore:adder ;
++---------------------------+-------+------+------------+
+; Assignment                ; Value ; From ; To         ;
++---------------------------+-------+------+------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -          ;
++---------------------------+-------+------+------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_mult:Mult0                 ;
++------------------------------------------------+----------+---------------------+
+; Parameter Name                                 ; Value    ; Type                ;
++------------------------------------------------+----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 6        ; Untyped             ;
+; LPM_WIDTHB                                     ; 8        ; Untyped             ;
+; LPM_WIDTHP                                     ; 14       ; Untyped             ;
+; LPM_WIDTHR                                     ; 14       ; Untyped             ;
+; LPM_WIDTHS                                     ; 1        ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped             ;
+; LPM_PIPELINE                                   ; 0        ; Untyped             ;
+; LATENCY                                        ; 0        ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; YES      ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped             ;
+; USE_EAB                                        ; OFF      ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5        ; Untyped             ;
+; DEVICE_FAMILY                                  ; FLEX10K  ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING  ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped             ;
++------------------------------------------------+----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                ;
+; LPM_WIDTHD             ; 8              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_b3m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 9              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_r1m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 9              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                ;
+; LPM_WIDTHD             ; 9              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_3ql ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 9              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_add_sub:Add0 ;
++------------------------+-------------+----------------------------+
+; Parameter Name         ; Value       ; Type                       ;
++------------------------+-------------+----------------------------+
+; LPM_WIDTH              ; 15          ; Untyped                    ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                    ;
+; LPM_DIRECTION          ; ADD         ; Untyped                    ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                    ;
+; LPM_PIPELINE           ; 0           ; Untyped                    ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                    ;
+; REGISTERED_AT_END      ; 0           ; Untyped                    ;
+; OPTIMIZE_FOR_SPEED     ; 9           ; Untyped                    ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                    ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                    ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH         ;
+; DEVICE_FAMILY          ; FLEX10K     ; Untyped                    ;
+; USE_WYS                ; OFF         ; Untyped                    ;
+; STYLE                  ; FAST        ; Untyped                    ;
+; CBXI_PARAMETER         ; add_sub_toh ; Untyped                    ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY               ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE               ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE             ;
++------------------------+-------------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 1              ;
+; Entity Instance                       ; lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 6              ;
+;     -- LPM_WIDTHB                     ; 8              ;
+;     -- LPM_WIDTHP                     ; 14             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED       ;
+;     -- INPUT_A_IS_CONSTANT            ; YES            ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Apr 30 20:41:48 2013
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Voltimetro -c Voltimetro
+Info: Found 2 design units, including 1 entities, in source file Voltimetro.vhd
+    Info: Found design unit 1: Voltimetro-arquitecturaVoltimetro
+    Info: Found entity 1: Voltimetro
+Info: Elaborating entity "Voltimetro" for the top level hierarchy
+Warning: Using design file codificador7Segmentos.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: codificador7Segmentos-arquitecturaCodificador7Segmentos
+    Info: Found entity 1: codificador7Segmentos
+Info: Elaborating entity "codificador7Segmentos" for hierarchy "codificador7Segmentos:mostrarUnidadesDisplay"
+Info: Inferred 5 megafunctions from design logic
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "Mult0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1"
+    Info: Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0"
+    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "Add0"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0"
+Info: Instantiated megafunction "lpm_mult:Mult0" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "6"
+    Info: Parameter "LPM_WIDTHB" = "8"
+    Info: Parameter "LPM_WIDTHP" = "14"
+    Info: Parameter "LPM_WIDTHR" = "14"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "YES"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+    Info: Parameter "DEDICATED_MULTIPLIER_CIRCUITRY" = "AUTO"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "lpm_mult:Mult0"
+Info: Elaborated megafunction instantiation "lpm_divide:Div0"
+Info: Instantiated megafunction "lpm_divide:Div0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "14"
+    Info: Parameter "LPM_WIDTHD" = "8"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_b3m.tdf
+    Info: Found entity 1: lpm_divide_b3m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_0mh.tdf
+    Info: Found entity 1: sign_div_unsign_0mh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_qne.tdf
+    Info: Found entity 1: alt_u_div_qne
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_a9c.tdf
+    Info: Found entity 1: add_sub_a9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_b9c.tdf
+    Info: Found entity 1: add_sub_b9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_i9c.tdf
+    Info: Found entity 1: add_sub_i9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_c9c.tdf
+    Info: Found entity 1: add_sub_c9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_d9c.tdf
+    Info: Found entity 1: add_sub_d9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_e9c.tdf
+    Info: Found entity 1: add_sub_e9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_f9c.tdf
+    Info: Found entity 1: add_sub_f9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_g9c.tdf
+    Info: Found entity 1: add_sub_g9c
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_h9c.tdf
+    Info: Found entity 1: add_sub_h9c
+Info: Elaborated megafunction instantiation "lpm_divide:Div1"
+Info: Instantiated megafunction "lpm_divide:Div1" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "9"
+    Info: Parameter "LPM_WIDTHD" = "4"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_r1m.tdf
+    Info: Found entity 1: lpm_divide_r1m
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_gkh.tdf
+    Info: Found entity 1: sign_div_unsign_gkh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_qke.tdf
+    Info: Found entity 1: alt_u_div_qke
+Info: Elaborated megafunction instantiation "lpm_divide:Mod0"
+Info: Instantiated megafunction "lpm_divide:Mod0" with the following parameter:
+    Info: Parameter "LPM_WIDTHN" = "9"
+    Info: Parameter "LPM_WIDTHD" = "9"
+    Info: Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info: Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info: Found 1 design units, including 1 entities, in source file db/lpm_divide_3ql.tdf
+    Info: Found entity 1: lpm_divide_3ql
+Info: Found 1 design units, including 1 entities, in source file db/sign_div_unsign_lkh.tdf
+    Info: Found entity 1: sign_div_unsign_lkh
+Info: Found 1 design units, including 1 entities, in source file db/alt_u_div_4le.tdf
+    Info: Found entity 1: alt_u_div_4le
+Info: Elaborated megafunction instantiation "lpm_add_sub:Add0"
+Info: Instantiated megafunction "lpm_add_sub:Add0" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "15"
+    Info: Parameter "LPM_DIRECTION" = "ADD"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
+Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder", which is child of megafunction instantiation "lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder|a_csnbuffer:oflow_node", which is child of megafunction instantiation "lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|addcore:adder|a_csnbuffer:result_node", which is child of megafunction instantiation "lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "lpm_add_sub:Add0"
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "puntoDisplay" is stuck at GND
+    Warning (13410): Pin "segundoPunto" is stuck at VCC
+    Warning (13410): Pin "A[0]" is stuck at GND
+    Warning (13410): Pin "A[1]" is stuck at GND
+    Warning (13410): Pin "A[2]" is stuck at GND
+    Warning (13410): Pin "MODE" is stuck at GND
+Warning: Ignored 54 CARRY_SUM primitives
+    Warning: Ignored 13 CARRY_SUM primitives -- cannot place fan-in logic in single logic cell
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[1]" in single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12|add_sub_cella[8]~85" of type CARRY_SUM
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~74" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]" in single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[8]~85" of type CARRY_SUM
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[6]~64" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[6]" in single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~38" of type CARRY_SUM
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[5]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[1]" in single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[8]~85" of type CARRY_SUM
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~38" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[2]" in single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]~87" of type CARRY_SUM
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[1]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[5]" in single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~38" of type CARRY_SUM
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[4]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[1]" in single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[8]~85" of type CARRY_SUM
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[4]~32" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[3]" in single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[2]" of type CARRY_SUM
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~63" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[1]" in single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[8]~85" of type CARRY_SUM
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[4]~44" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_8|add_sub_cella[1]" in single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12|add_sub_cella[8]~85" of type CARRY_SUM
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[4]~44" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[2]" in single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[1]" of type CARRY_SUM
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]~87" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[1]" in single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[8]~85" of type CARRY_SUM
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[0]" of type CARRY_SUM
+        Warning: Can't place logic feeding CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12|add_sub_cella[1]" in single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[8]~85" of type CARRY_SUM
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12|add_sub_cella[0]" of type CARRY_SUM
+    Warning: Ignored 41 CARRY_SUM primitive(s) -- cannot place fan-out logic in single logic cell
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[1]" into a single logic cell
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[2]~20" of type LUT
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[2]~23" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[4]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[5]~33" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[5]~37" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[3]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[4]~41" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[4]~45" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[2]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[3]~49" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[3]~53" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[1]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[2]~28" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[2]~31" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[0]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[1]~79" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[1]~83" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[4]" into a single logic cell
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[4]~45" of type LUT
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[4]~46" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[4]~44" into a single logic cell
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[1]~41" of type LUT
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[1]~37" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[4]" into a single logic cell
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[4]~45" of type LUT
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[4]~46" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[4]~32" into a single logic cell
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[1]~41" of type LUT
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[1]~37" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[4]" into a single logic cell
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[4]~33" of type LUT
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[4]~34" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12|add_sub_cella[8]~85" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_13|add_sub_cella[8]" of type CARRY_SUM
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[1]~33" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12|add_sub_cella[8]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12|add_sub_cella[8]~86" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12|add_sub_cella[8]~87" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~74" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[1]~33" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[1]~29" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~75" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~76" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~19" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~23" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]~43" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]~47" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]~51" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]~55" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]~59" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]~63" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[2]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]~67" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]~71" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[8]~85" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~31" of type LUT
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[1]~41" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[8]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[8]~86" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[8]~87" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[6]~64" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~31" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~27" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[8]~85" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[1]~29" of type LUT
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[1]~41" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[8]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[8]~86" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_10|add_sub_cella[8]~87" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~38" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[6]~21" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[1]~29" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~39" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~40" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[4]" into a single logic cell
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~13" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~15" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[8]~87" into a single logic cell
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[1]~17" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[1]~35" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[8]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[8]~88" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_9|add_sub_cella[8]~89" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]~87" into a single logic cell
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[2]~23" of type LUT
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[2]~31" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]~88" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_8|add_sub_cella[8]~89" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~63" into a single logic cell
+            Warning: Node "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[3]" of type CARRY_SUM
+            Warning: Node "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[3]~25" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~64" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~65" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~18" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~21" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]~48" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]~51" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]~42" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]~45" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]~36" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]~39" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[2]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]~30" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[3]~33" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[2]~24" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[2]~27" of type LUT
+        Warning: Can't place logic fed by CARRY_SUM primitive "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[0]" into a single logic cell
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~54" of type LUT
+            Warning: Node "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~57" of type LUT
+Info: Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[1]~29"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_i9c:add_sub_8|add_sub_cella[1]~33"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~27"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_h9c:add_sub_7|add_sub_cella[1]~31"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~13"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[5]~15"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[1]~25"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_g9c:add_sub_6|add_sub_cella[1]~29"
+    Info (17048): Logic cell "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[1]~15"
+    Info (17048): Logic cell "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_5|add_sub_cella[1]~17"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[4]~17"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[4]~19"
+    Info (17048): Logic cell "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[1]~37"
+    Info (17048): Logic cell "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_6|add_sub_cella[1]~41"
+    Info (17048): Logic cell "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_11|add_sub_cella[0]~51"
+    Info (17048): Logic cell "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_i9c:add_sub_12|add_sub_cella[0]~35"
+    Info (17048): Logic cell "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[1]~37"
+    Info (17048): Logic cell "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_7|add_sub_cella[1]~41"
+    Info (17048): Logic cell "lpm_divide:Div1|lpm_divide_r1m:auto_generated|sign_div_unsign_gkh:divider|alt_u_div_qke:divider|add_sub_e9c:add_sub_8|add_sub_cella[1]~41"
+    Info (17048): Logic cell "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[0]~59"
+    Info (17048): Logic cell "lpm_divide:Div0|lpm_divide_b3m:auto_generated|sign_div_unsign_0mh:divider|alt_u_div_qne:divider|add_sub_h9c:add_sub_7|add_sub_cella[0]~61"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[1]~33"
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_3ql:auto_generated|sign_div_unsign_lkh:divider|alt_u_div_4le:divider|add_sub_f9c:add_sub_5|add_sub_cella[1]~35"
+Info: Implemented 387 device resources after synthesis - the final resource count might be different
+    Info: Implemented 10 input pins
+    Info: Implemented 22 output pins
+    Info: Implemented 355 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 173 warnings
+    Info: Peak virtual memory: 196 megabytes
+    Info: Processing ended: Tue Apr 30 20:41:55 2013
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
+
+

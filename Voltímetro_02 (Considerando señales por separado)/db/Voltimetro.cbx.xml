@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Voltimetro">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Voltimetro|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_b3m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Voltimetro|lpm_divide:Div1" CBX_FILE_NAME="lpm_divide_r1m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Voltimetro|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_3ql.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Voltimetro|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_m0h.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

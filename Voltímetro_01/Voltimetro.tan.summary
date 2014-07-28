@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 10.000 ns
+From           : D[1]
+To             : voltaje[1]
+From Clock     : --
+To Clock       : INT
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 266.600 ns
+From           : voltaje[2]
+To             : decimalesDisplay[3]
+From Clock     : INT
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.400 ns
+From           : D[5]
+To             : voltaje[5]
+From Clock     : --
+To Clock       : INT
+Failed Paths   : 0
+
+Type           : Clock Setup: 'reloj'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 47.17 MHz ( period = 21.200 ns )
+From           : \obtencionFrecuenciaMuestreo:i[0]
+To             : \obtencionFrecuenciaMuestreo:i[0]
+From Clock     : reloj
+To Clock       : reloj
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+
